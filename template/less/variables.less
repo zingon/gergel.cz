@@ -1,13 +1,19 @@
-//colors
+//-----------------------------colors
+//background
 @bgColor: white;
-@navColor: #d91e0f;
+@navBgColor: #d91e0f;
+//text
 @textColor: #6f6f6f;
 @h_colorBlue: #281473;
-@h_colorRed: @navColor;
+@h_colorRed: @navBgColor;
+@aColor: @h_colorRed;
+@aColorHover: @h_colorBlue;
+@aColorVisited: @aColorHover;
 
-//text
+//-----------------------------text
 @textSize: 14px;
 @h1Size: ceil(@textSize * 2.57); //36px pokud se @textSize = 14
 @h2Size: ceil(@textSize * 2.14); //30px pokud se @textSize = 14
 @h3Size: ceil(@textSize * 1.42); //20px pokud se @textSize = 14
 @h4Size: ceil(@textSize * 1.71); //24px pokud se @textSize = 14
+
