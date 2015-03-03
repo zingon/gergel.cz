@@ -1,0 +1,67 @@
+/**
+* STYLY PRO PROJEKT
+* VÝSLEDNÉ STYLY PO ZPRACOVÁNÍ VE SLOŽCE '/media/css'
+* EDITUJTE VE SLOŽCE '/media/less' <<< !!!
+* TOM BARBOŘÍK (dgstudio)
+**/
+
+
+@import "variables.less";
+@import "mixins.less";
+
+.display-table {
+  display: table;
+  width: 100%;
+
+  .display-row {
+    display: table-row;
+    width: 100%;
+
+    .display-cell {
+      display: table-cell;
+    }
+  }
+
+}
+
+Body {
+  font-family: @OpenSans;
+}
+
+header {
+
+  #main-logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+#main-nav {
+  background-color: @red;
+  box-shadow: 0 6px 7px rgba(0,0,0,0.17);
+
+  nav {
+    background: transparent;
+
+    li {
+
+      background: inherit;
+
+      a {
+        background: inherit;
+        font-size: 1rem;
+      }
+
+      &.active, &:hover {
+        background: darken(@red, 10);
+
+        &.active a {
+          font-weight: 600;
+        }
+      }
+
+    }
+
+  }
+
+}
