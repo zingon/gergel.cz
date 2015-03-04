@@ -1,8 +1,42 @@
 nav#mainNav {
-  height: 67px;
+  min-height: @navHeight;
   background-color: @navBgColor;
+  padding-right: 80px;
+  box-sizing: border-box;
+  .home {
+    margin: (@navHeight - 25) / 2 25px 25px 25px;
+    float: left;
+  }
+  font-family: @familyRoboto;
+  font-size: @navTextSize;
+  text-transform: uppercase;
+  a {
+    color: @bgColor;
+  }
+  .nav {
+    width: 100%;
+    a {
+      display: block;
+      box-sizing: border-box;
+      float: left;
+      width: auto;
+      height: @navHeight;
+      padding-top: (@navHeight  - @navTextSize)/ 2;
+    }
+  }
 }
 
 nav.breadcrumbs {
   background-color: transparent;
+  font-family: @familyRoboto;
+  a {
+    font-size: 16px;
+    color: @h_colorBlue;
+    &:hover {
+      color: @h_colorRed;
+    }
+    &::before {
+      content: "▪";
+    }
+  }
 }

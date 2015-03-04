@@ -2,29 +2,37 @@
   clear: both;
 }
 
+.slice(@slice) {
+  @media screen and (max-width: (@pageWidth - @pageWidth / (@slice * @slice))) {
+    & {
+      float: none;
+    }
+  }
+}
+
 .pullLeft, .pullRight {
   box-sizing: border-box;
-  width: 50%;
 }
 .pullRight {
-  float: right;
   padding-left: 20px;
-  img {
-    float: right;
+  text-align: right;
+  @media screen and (max-width: (@pageWidth - @pageWidth / (2 * 2))) {
+    padding-left: 0;
+    text-align: left;
   }
 }
 .pullLeft {
-  float: left;
   padding-right: 20px;
 }
-
 .makeMeHalf {
   width: 100% / 2;
   float: left;
+  .slice(2);
 }
 .makeMeThird {
   width: 100% / 3;
   float: left;
+  .slice(3)
 }
 .makeMeQuarter {
   width: 100% / 4;
