@@ -4,7 +4,7 @@ nav#mainNav {
   padding-right: 80px;
   box-sizing: border-box;
   .home {
-    margin: (@navHeight - 25) / 2 25px 25px 25px;
+    margin: ((@navHeight - 25) / 2) (25px - @navItemPadding / 2) 0px 25px;
     float: left;
   }
   font-family: @familyRoboto;
@@ -12,16 +12,36 @@ nav#mainNav {
   text-transform: uppercase;
   a {
     color: @bgColor;
+    line-height: @navTextSize;
   }
   .nav {
     width: 100%;
-    a {
+    > a {
       display: block;
       box-sizing: border-box;
+      text-align: center;
       float: left;
       width: auto;
       height: @navHeight;
-      padding-top: (@navHeight  - @navTextSize)/ 2;
+      padding: ((@navHeight  - @navTextSize)/ 2) (@navItemPadding / 2) (0) (@navItemPadding / 2);
+      position: relative;
+      overflow: hidden;
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 10px;
+        background-color: @h_colorBlue;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translate(0, 10px);
+        transition: 200ms;
+      }
+      &:hover::after, &:active {
+        transform: translate(0, 0);
+        transition: 100ms;
+      }
     }
   }
 }
@@ -29,14 +49,24 @@ nav#mainNav {
 nav.breadcrumbs {
   background-color: transparent;
   font-family: @familyRoboto;
-  a {
-    font-size: 16px;
-    color: @h_colorBlue;
-    &:hover {
-      color: @h_colorRed;
+  font-size: 16px;
+  color: @h_colorBlue;
+  margin: 10px auto;
+  span {
+    a {
+      color: @h_colorBlue;
+      font-size: 16px;
+      vertical-align: bottom;
+      &:hover {
+        color: @h_colorRed;
+      }
     }
     &::before {
       content: "▪";
+      margin: 0 10px 0 10px;
+    }
+    &:first-child::before {
+      content: "";
     }
   }
 }

@@ -13,9 +13,14 @@ html {
   }
   h1 {
     font-size: @h1Size;
+    margin-bottom: 50px;
+    &:first-child {
+      margin-top: 0;
+    }
   }
   h2 {
     font-size: @h2Size;
+    margin-bottom: 25px;
   }
   h3 {
     font-size: @h3Size;
@@ -23,6 +28,11 @@ html {
   h4 {
     font-size: @h4Size;
     color: @h_colorRed;
+  }
+  p {
+    margin-top: 0;
+    line-height: 18px;
+    margin-bottom: 25px;
   }
   a {
     text-decoration: none;
@@ -32,6 +42,18 @@ html {
     }
     &:visited {
       color: @aColorVisited;
+    }
+    &:visited:hover {
+      color: @aColor;
+    }
+  }
+  article img {
+    margin: 0 20px 20px 0;
+  }
+  .pullRight img {
+    margin: 0 0 20px 20px;
+    @media screen and (max-width: (@pageWidth - @pageWidth / (2 * 2))) {
+      margin: 0 20px 20px 0;
     }
   }
 }
