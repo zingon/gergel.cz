@@ -1,0 +1,310 @@
+button:focus, a:focus  {
+    outline: 0 !important;
+}
+
+.form-group {overflow: hidden}
+
+.popover {
+    max-width: none !important;
+}
+
+a{color:#666666;text-decoration:underline; margin:0; padding:0;}
+a:hover{text-decoration:none;}
+
+img{border: none;}
+
+.noborder, table.noborder, table.noborder tr, table.noborder td, table.noborder th{border: none !important;}
+ul li, ol li{list-style-position: inside;}
+input, select{}
+hr{display: none;}
+address{font-style: normal;}
+fieldset{border: 1px solid #B7B7B2; padding: 3px;}
+
+.right{float:right !important;}
+.left{float:left !important;}
+.txtCenter{text-align: center;}
+.txtRight{text-align: right;}
+.txtLeft{text-align: left;}
+.vaMiddle *{vertical-align: middle;}
+.boxCenter{margin: 0 auto;}
+
+.bold,.strong{font-weight: bold;}
+.italic{font-style: italic;}
+
+.noDisplay, .printonly, #PrintSection{display:none;}
+.correct, .clear{display: block; clear: both;}
+.pointer{cursor: pointer;}
+
+/* barvy informacnich textu */
+.red, .error{color: red;}
+.green{color: #96C11E;}
+
+/* zpravy, jquery zpravy */
+.message{margin: 10px 0 10px 0; padding: 5px 10px; color: #343434; font-weight: bold; border: 1px solid #343434;}
+.message_info{color: #330099; border-color: #330099;}
+.message_error{color: red; border-color: red;}
+.message_ok{color: #51511F; border-color: #51511F;}
+
+.text_error{color: red; font-weight: bold;}
+
+
+
+.ui-widget{margin-bottom: 7px;}
+.ui-corner-all{padding: 0.7em;}
+#ui-datepicker-div .ui-corner-all{padding: 0.2em;}
+.ui-icon{float: left; margin-right: .3em;}
+
+.ui-state-ok{background:#CBF4B5 url(images/ui-bg_glass_55_2e83ff_1x400.png) repeat-x scroll 50% 50%; border:1px solid #006633; color:#363636;}
+
+
+/* defaultni textove radky pro zobrazovani parametru, popisku, apod.*/
+.smallLineText{height: 13px; line-height: 13px; font-size: 10px; padding-bottom: 2px;}
+.defaultLineText{height: 14px; line-height: 14px; font-size: 11px; padding-bottom: 3px;}
+.midLineText{height: 15px; line-height: 15px; font-size: 13px; padding-bottom: 5px;}
+.bigLineText{height: 17px; line-height: 17px; font-size: 14px; padding-bottom: 6px;}
+
+/* defaultni vertikalni odstupy (margin-top)*/
+.smallMT{margin-top: 5px !important;}
+.defaultMT{margin-top: 10px !important;}
+.bigMT{margin-top: 15px !important;}
+
+/* defaultni horizontalni odstupy (margin-top)*/
+.defaultMH{margin-left: 10px; margin-right: 10px;}
+.bigMH{margin-left: 15px; margin-right: 15px;}
+
+.no_margin{margin: 0 !important;}
+.no_decoration{text-decoration: none !important;}
+
+/***** rozdeleni adminu */
+#Header{height: 99px; overflow: hidden; border-bottom: 1px solid #53616E;}
+#Header .left{float: left; margin-left:207px; display: inline; /*ie6*/}
+
+#MainLogo{position: absolute; right: 0; top: 0;}
+
+/* navigace a subnavigace a modulove menu*/
+#Nav{clear:right; list-style:none; margin-top: 70px; position: relative; z-index: 89;}
+#Nav li{display: block; float: left; height: 29px; margin-right: 4px; background: url(../../admin/img/bgr_nav_left.gif) repeat-x;}
+#Nav li a{display: block; float: left; height: 29px; margin: 0; line-height: 29px; padding: 0 12px; text-decoration:none; font-size:12px; font-weight:bold; text-transform: lowercase; background: url(../../admin/img/bgr_nav_right.gif) no-repeat right;}
+#Nav li a:hover{text-decoration: underline;}
+#Nav li.sel{background-image: url(../../admin/img/bgr_nav_sel_left.gif);}
+#Nav li.sel a{background-image: url(../../admin/img/bgr_nav_sel_right.gif); color: #F9F9F9;}
+
+#SubnavSection{clear: both; margin-left: 208px; height: 28px; list-style:none; margin-top:0px; margin-bottom:0; background-color: #55616F;} 
+#SubnavSection li{display:inline;}
+#SubnavSection li a{float: left; text-decoration:none; display:  block; padding: 6px 12px; color:#fff; font-size:11px;}
+#SubnavSection li a:hover{ color:#fff; text-decoration: underline;}
+#SubnavSection li a.sel{font-weight: bold; text-decoration: underline;}
+#SubnavSectionSpacing{height: 28px;}
+
+
+#ModuleLinks{position: absolute; left: 20px; width:173px; margin-left:0; list-style-type: none; margin-top:77px;}
+#LeftSection .box .top{width: 173px; height: 8px; background: url(../../admin/img/bgr_subnav_top.gif) no-repeat; overflow: hidden;}
+#ModuleLinks ul{float: left; width: 151px; padding: 0 11px; background: url(../../admin/img/bgr_subnav.gif) repeat-y;}
+#ModuleLinks li{float: left; width: 151px; height: 30px; background: url(../../admin/img/bgr_subnav_li.gif) no-repeat bottom; list-style-type: none;}
+#ModuleLinks li.last{background: none;}
+#ModuleLinks a{display: block; height: 28px; line-height: 28px; text-decoration: none; text-align: left;}
+#ModuleLinks a.sel{text-decoration: underline;}
+#ModuleLinks a:hover{text-decoration: underline;}
+#LeftSection .box .bottom{clear: both; width: 173px; height: 48px; background: url(../../admin/img/bgr_subnav_bottom.gif) no-repeat;}
+
+
+/* stredni cast - rozdeleni*/
+#CenterSection{clear: both; margin-top: 15px; margin-right: 20px;}
+
+#LeftSection{float: left; width:173px;}
+
+
+#Footer{margin: 15px 0 15px 208px; }
+
+
+/***** spolecny obsah */
+/* tlacitka */
+input{height: 20px; border: 1px solid #A8B7CC;}
+input.short{width:30px !important;}
+input.mid{width: 100px !important;}
+input.subm, a.subm{height: 26px; padding: 0 10px 3px 10px !important; border: 1px solid #A8B7CC; background: #ABC5E8 url(../../admin/img/bgr_subm.gif) repeat-x; cursor: pointer; color: #44596E; text-align: center;}
+
+
+/***** jednotlive sekce */
+
+/* tlacitka funkci nad list tabulkou a filtrovani */
+#ToolButts{height: 29px; margin: 0 140px 6px 0;}
+#ToolButts *{vertical-align: middle;}
+#ToolButts .item{text-decoration: none; display: block; float: left; margin-right: 7px; height: 16px; line-height: 15px; padding: 5px 4px;  border: 1px solid #D6D6D6; font-weight: bold; font-size: 13px; background: url(../img/bgr_buttons.gif) repeat-x; overflow: hidden; border-radius: 4px;}
+#ToolButts .item span{text-decoration: none;}
+#ToolButts .item:hover span{text-decoration: none;}
+
+.tb_full{margin-right: 0 !important;}
+
+.tb_newLink{float: left;}
+
+.languageButts{height: 26px; line-height: 26px; text-align: right; margin-bottom: 6px;}
+.languageButts .title{font-weight: bold; color: #546171; }
+.languageButts *{vertical-align: middle;}
+.languageButts ul{display: inline;}
+.languageButts li{display: inline;  list-style-type: none;}
+.languageButts li a{padding: 4px 6px 6px; border: 1ps solid #D6D6D6; background: url(../img/bgr_buttons.gif) repeat-x; margin: 0 0 0 2px; border: 1px solid #BFC0C4; border-radius: 4px;}
+.languageButts li.sel a{background: #546171;}
+.languageButts li.sel a{text-decoration: none; color: #fff; font-weight: bold;}
+.languageButts li.disabled a{text-decoration: none; color: #969696;}
+
+.filtering{display: block; width: 131px; float: right; height: 26px; line-height: 26px; padding: 0 0 0 4px; margin: 0 0 6px 0; border: 1px solid #D6D6D6; background: url(../img/bgr_buttons.gif) repeat-x; border-radius: 4px; text-decoration: none;}
+.filtering a{text-decoration: none;}
+.filtering img{ vertical-align: -2px;}
+.filt{float: left; display: block; height: 26px; line-height: 26px;}
+.filt img{vertical-align: middle; padding: 3px 3px 6px 0;}
+.filtering .filteringB{display: block; float: right; border-left: 1px solid #D6D6D6; padding: 5px 5px 6px 5px; vertical-align: -8px !important; width: 11px; height: 15px; overflow: hidden;}
+
+
+
+/* listovaci tabulka */
+#ListTableSection{}
+
+#ListTableSection img{border: none;}
+#ListTableSection .catdetailCol *{text-decoration: none; vertical-align: middle; font-size: 10px;}
+
+#ListTableSection table {width:100%; clear: both; padding: 0; position: relative;}                                   
+#ListTableSection table TH{background-color: #CADBF5; color:#273F5B; height: 30px; line-height: 29px; padding: 0 5px; text-align:center;} 
+#ListTableSection table TH img{vertical-align: -1px;}                                           
+#ListTableSection table TD{padding:7px 5px;}
+#ListTableSection table TR.affected TD{background-color: #CBF4B5;}                                                    
+#ListTableSection table TR:hover TD, #AdminRightTable TR.level2:hover{background-color:#D6D6D6;}
+#ListTableSection .tableBottom{margin-bottom: 10px;}
+
+#ListTablePagination{background-color:#CADBF5; padding:6px 0; color: #475C77; border:1px solid #A8B7CA; width:100%;}
+#ListTablePagination A:hover{text-decoration: none;}
+#ListTablePagination .sel{padding: 2px; background-color:#475C77; color: #fff; border: 1px solid #fff; /*background-color:#fff; color: #666666;*/}
+#ListTablePagination A{margin:0 1px; padding:0 3px; color: #475C77;}
+#ListTablePagination .left{float:left; margin-left:10px; color: #475C77; }
+#ListTablePagination .left p{display: inline;}
+#ListTablePagination .right{float:right; margin-right:10px;}
+
+#ListTableFormControls{border:1px solid #A8B7CA; background-color: #EBEBEB; height:30px; padding:7px 3px 3px 3px; text-align: right; overflow: hidden;}
+#ListTableFormControls .info{float: left; padding: 5px 10px 0 7px;}
+#ListTableFormControls *{vertical-align: middle;}
+#ListTableFormControls .subm{margin-right: 10px;}
+
+
+#ListTableSection select, #ListTableSection input[type=select]{border: 1px solid #A8B7CA;}
+
+.tree_level_2{padding-left: 25px; background: url(../img/level_separator.gif) 10px -4px no-repeat;}
+.tree_level_3{padding-left: 35px; background: url(../img/level_separator.gif) 20px -4px no-repeat;}
+.tree_level_4{padding-left: 45px; background: url(../img/level_separator.gif) 30px -4px no-repeat;}
+.tree_level_5{padding-left: 55px; background: url(../img/level_separator.gif) 40px -4px no-repeat;}
+
+input[type=checkbox]#sellAll {
+    height: auto !important;
+}
+
+/* filtrovaci radek listovaci tabulky */
+#ListTableSection .filteringRow .subm{height: 25px; margin: 2px 3px; padding: 2px 6px 4px;}
+#ListTableSection table TR.filteringRow:hover TD{background-color: #FFF0B0;}
+#ListTableSection .filteringRow td{padding: 0; line-height: 26px; vertical-align: middle; background-color: #FFF0B0;}
+#ListTableSection .filteringRow td *{margin: 4px;}
+#ListTableSection .fr1{border-width: 2px 2px 0 2px;}
+#ListTableSection .fr1 td input, #ListTableSection .fr1 td select{border: 1px solid #666666; height: 20px;}
+#ListTableSection .fr1 td input[type=text]{width: 80%;}
+#ListTableSection .fr2{border-width: 0 2px 2px 2px;}
+
+#ListTableSection .filteringRow .tristateCheckboxContainer{text-align: center;}
+
+.filteringRowHide, .filteringRowHide td{height: 1px !important; overflow: hidden; border: none; display: none;}
+.filteringRowHide input, .filteringRowHide select, .filteringRowHide div{display: none;}
+
+.summaryRow td{background-color: #FFF0B0; font-weight: bold;}
+
+/* editacni tabulka */
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.padding-right-10 {
+    padding-right: 10px;
+}
+
+#photo-delete {margin-top: 20px}
+
+#PhotoPreviewBox{/*width:785px;*/ min-height:200px; padding: 6px 0 0 6px; background-color: #EBEBEB;}
+#PhotoPreviewBox .item{text-align: center; position: relative; float: left; margin: 0 13px 13px 0; width: 180px; height: 220px; border: 1px solid #ABB9CD; overflow: hidden; background-color: #F9F9F9; border-radius: 4px;}
+#PhotoPreviewBox .sortUpdate{background-color: #FFEEAE !important;}
+#PhotoPreviewBox .item img{margin: 10px; }
+#PhotoPreviewBox .item .footer{position: absolute; width: 180px; height: 44px;  left:0; bottom: 0;}
+#PhotoPreviewBox .item .title{height: 18px; overflow: hidden;}
+#PhotoPreviewBox .item .tools{height: 25px; line-height: 25px; background-color: #fff; border-top: 1px solid #ABB9CD;}
+#PhotoPreviewBox .item .tools *{vertical-align: middle;}
+#PhotoPreviewBox .item .tools a{text-decoration: none;}
+#PhotoPreviewBox .item .tools img, #PhotoPreviewBox .item .tools input{margin: 0 5px;}
+#PhotoPreviewBox .item .tools img.left{margin-top: 6px;}
+#PhotoPreviewBox .item .tools img.right{float: right; margin-top: 6px;}
+
+#PhotoPreviewBox .item .scrolItem{position: absolute; top: -135px;}
+#PhotoPreviewBox.ui-state-highlight{width: 180px; height: 220px; background-color: red;}
+
+/* vychozi styl vnitrku modalnich formularu */
+#JqueryForm{}
+#JqueryForm table{background-color: #fff; border: none; margin: 10px;}
+#JqueryForm table td, #JqueryForm table th, #JqueryForm table tr{background-color: #fff; border: none;}
+#JqueryForm table td{padding: 6px 3px;}
+#JqueryForm input, #JqueryForm textarea{border: 1px solid #ABB9CD}
+#JqueryForm .photoT{width: 160px; height: 160px; margin: 10px; text-align: center;}
+
+#JqueryForm .ui-state-error p{margin: 6px 0;}
+
+/* specialni formular objednavky v adminu */
+#AdminOrderForm{}
+#AdminOrderForm .button{margin-right: 15px; background: #ABC5E8 url(../../admin/img/bgr_subm.gif) repeat-x;}
+#AdminOrderForm .btSmall{height: 23px; padding: 2px 4px 3px; margin: 0;}
+#AdminOrderForm td{padding: 3px 4px;}
+#AdminOrderForm th{padding: 5px 4px; background-color: #55616F; color: #fff;}
+#AdminOrderForm input, #AdminOrderForm select{border: 1px solid #55616F;}
+
+/* nahled objednavky */
+.orderTable{width: 800px; background-color: #fff; font-size: 14px; line-height: 1.4; }
+.orderTable table{border: none;}
+.orderTable td, .orderTable th, .orderTable tr{background-color: #fff; padding: 3px 8px; border: none;}
+.orderTable .box{border: 2px solid #000;}
+.orderTable .p20{padding: 20px;}
+.orderTable .orderItems, .orderTable .orderAddition{}
+.orderTable .orderItems table, .orderTable .orderAddition table{width: 100%;}
+.orderTable tr.grey th{background-color: #D8D8D8;}
+.orderTable tr.grey td{background-color: #E7E7E7;}
+.orderTable .priceLabelCol{font-size: 15px; text-align: right;}
+.orderTable .priceCol{text-align: right;}
+
+/* styly sirek */
+.w180{width: 180px;}
+.w220{width: 220px;}
+.w235{width: 235px;}
+
+/* styly mezer */
+
+.space-5 {margin-top: 5px; margin-bottom: 5px;}
+
+
+/***** ostatni stranky - prihlasovani, zapomenute heslo */
+
+/* prihlasovani do adminu */
+#LoginForm{width: 393px; margin: 120px auto 0; }
+
+
+/* korekce zobrazeni jquery UI */
+#ui-datepicker-div{display: none;} 
+.ranges .ui-datepicker .ui-datepicker-prev, .ranges .ui-datepicker .ui-datepicker-next{ height: 0.8em;}
+.ranges .ui-corner-all{padding:0.4em;}
+
+/* pagination */
+
+.pagination, .strankovani {
+    margin-top: 0px !important;
+    margin-bottom: 20px;
+}
+
+/* video */
+video {
+    max-width: 200px !important;
+}

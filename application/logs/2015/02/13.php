@@ -1,0 +1,18 @@
+<?php defined('SYSPATH') or die('No direct script access.'); ?>
+
+2015-02-13 13:47:23 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 13:47:23 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 16:57:45 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:03:01 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:03:02 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: favicon.ico ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:04:47 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:05:38 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:05:52 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:07:15 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:07:24 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:07:27 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:07:55 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:08:31 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:09:28 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 17:11:24 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
+2015-02-13 20:36:12 --- ERROR: Kohana_Request_Exception [ 0 ]: Unable to find a route to match the URI: media/img/product-image-cointainer-big-white.png ~ SYSPATH/classes/kohana/request.php [ 674 ]
