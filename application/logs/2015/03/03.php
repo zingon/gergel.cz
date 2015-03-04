@@ -48,3 +48,4 @@
 2015-03-03 23:20:02 --- ERROR: Database_Exception [ 0 ]:  ~ MODPATH/database/classes/kohana/database/mysql.php [ 67 ]
 2015-03-03 23:22:04 --- ERROR: Database_Exception [ 0 ]:  ~ MODPATH/database/classes/kohana/database/mysql.php [ 67 ]
 2015-03-03 23:23:10 --- ERROR: Database_Exception [ 0 ]:  ~ MODPATH/database/classes/kohana/database/mysql.php [ 67 ]
+2015-03-03 23:33:16 --- ERROR: Database_Exception [ 0 ]:  ~ MODPATH/database/classes/kohana/database/mysql.php [ 67 ]
