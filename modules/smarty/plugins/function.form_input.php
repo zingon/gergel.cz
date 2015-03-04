@@ -31,14 +31,12 @@ function smarty_function_form_input(array $params, Smarty_Internal_Template $tem
     }
     
     $class        =isset($params["class"])?$params["class"]:"";
-    $label        =isset($params["label"])?$params["label"]:"";
-    $placeholder  =isset($params["placeholder"])?$params["placeholder"]:""; 
-    $default      =isset($params["default"])?$params["default"]:""; 
+    $label        =isset($params["label"])?$params["label"]:""; 
+    $default =isset($params["default"])?$params["default"]:""; 
     $data         =isset($params["data"])?$params["data"]:array();
     $errors       =isset($params["errors"])?$params["errors"]:array();
     $disabled     =isset($params["disabled"])?true:false; 
     $table_row    =isset($params["table_row"])?true:false;
-    $required     =isset($params["required"])?true:false;
     
     $checked=($type=="checkbox" && isset($data[$name]))?true:false;
 
@@ -46,7 +44,7 @@ function smarty_function_form_input(array $params, Smarty_Internal_Template $tem
   
     
     $label=$label?"<label for=\"input_$name\" class=\"$class\">".__($label)."</label>":"";
-    $form_item="<input type=\"".$type."\" name=\"$full_name\" value=\"$value\" id=\"input_$name\" placeholder=\"$placeholder\" class=\"$class\"".($disabled?" disabled=\"disabled\"":"").($checked?" checked=\"checked\"":"").($required?" required":"")."/>";
+    $form_item="<input type=\"".$type."\" name=\"$full_name\" value=\"$value\" id=\"input_$name\" class=\"$class\"".($disabled?" disabled=\"disabled\"":"").($checked?" checked=\"checked\"":"")."/>";
     $error=isset($errors[$name])?"<span class=\"error\">$errors[$name]</span>":"";
     
     if($table_row)

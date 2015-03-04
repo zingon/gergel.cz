@@ -29,12 +29,11 @@ function smarty_function_form_textarea(array $params, Smarty_Internal_Template $
     $errors       =isset($params["errors"])?$params["errors"]:array();
     $disabled     =isset($params["disabled"])?true:false; 
     $table_row    =isset($params["table_row"])?true:false;
-    $required     =isset($params["required"])?true:false;
     
     $value=isset($data[$name])?$data[$name]:($default?$default:"");
     
     $label=$label?"<label for=\"input_$name\" class=\"$class\">".__($label)."</label>":"";
-    $form_item="<textarea name=\"$full_name\" id=\"input_$name\" class=\"$class\" ".($disabled?"disabled=\"disabled\"":"").($required?" required":"").">".$value."</textarea>";
+    $form_item="<textarea name=\"$full_name\" id=\"input_$name\" class=\"$class\" ".($disabled?"disabled=\"disabled\"":"").">".$value."</textarea>";
     $error=isset($errors[$name])?"<span class=\"error\">$errors[$name]</span>":"";
     
     if($table_row)
