@@ -1,0 +1,1 @@
+{widget controller="page"} 

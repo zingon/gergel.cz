@@ -96,7 +96,7 @@ class Hana_Navigation {
         $page_category = $navigation_category;
 
         $result_data = array();
-        $nodes = DB::select("page_data.nazev","routes.nazev_seo", "routes.language_id", "routes.module_id", "pages.parent_id", "pages.id", "pages.nav_class", "pages.indexpage", "pages.direct_to_sublink", "pages.show_in_submenu")
+        $nodes = DB::select("page_data.nazev","page_data.uvodni_popis","routes.nazev_seo", "routes.language_id", "routes.module_id", "pages.parent_id", "pages.id", "pages.nav_class", "pages.indexpage", "pages.direct_to_sublink", "pages.show_in_submenu")
             ->from("pages")
             ->join("page_data")->on("pages.id", "=", "page_data.page_id")
             ->join("routes")->on("page_data.route_id", "=", "routes.id")
