@@ -54,7 +54,7 @@
 </head>
 <body>
    {$web_owner.default_title}<br>
-   {widget controller="navigation" action="main"} 
+   {widget controller="navigation" action="main"} <br>
 
 	{$main_content}
 

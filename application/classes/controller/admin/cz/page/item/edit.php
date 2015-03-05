@@ -68,11 +68,15 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         
         $this->auto_edit_table->row("main_image_src")->type("filebrowser")->label("Zdroj obrázku")->set();
         $this->auto_edit_table->row("main_image")->type("image")->item_settings(array("dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"jpg","delete_link"=>true))->label("Náhled obrázku")->set();
+        
+        $this->auto_edit_table->row("icon_image_src")->type("filebrowser")->label("Obrázek na homepage")->set();
+        $this->auto_edit_table->row("icon_image")->type("image")->item_settings(array("db_col_name"=>"icon_src","dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
+
         //$this->auto_edit_table->row("show_photo_detail")->type("checkbox")->default_value(1)->label("Zobrazit obrázek na detailu stránky")->set();
         //$this->auto_edit_table->row("youtube_code")->type("edit")->label("Youtube kód")->condition("vkládejte odkaz na Youtube video ve tvaru např: http://www.youtube.com/embed/l_cb6WtaY0k")->set();
         
         $this->auto_edit_table->row("popis")->type("editor")->label("Hlavní text")->set();
-        //$this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text")->set();
+        $this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text")->set();
         
         $this->auto_edit_table->row("nav_class")->type("edit")->label("Třída prvku")->set();
         
@@ -165,6 +169,13 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
            $image_settings = Service_Hana_Setting::instance()->get_sequence_array($this->module_key, $this->submodule_key, "photo");
            $this->module_service->insert_image("main_image_src", $this->subject_dir, $image_settings, $this->orm->route->nazev_seo);
        }
+
+       if(isset($_FILES["icon_image_src"]) && $_FILES["icon_image_src"]["name"])
+       {
+           // nahraju si z tabulky settings konfiguracni nastaveni pro obrazky - tzn. prefixy obrazku a jejich nastaveni
+           $image_settings = Service_Hana_Setting::instance()->get_sequence_array($this->module_key, $this->submodule_key, "photo");
+           $this->module_service->insert_image("icon_image_src", $this->subject_dir, $image_settings, $this->orm->route->nazev_seo.'_icon',true,'png','icon_src');
+       }
        
        // po uprave struktury stranek smazu kazdopadne cache a to pro vsecky jazyky (mohla byt zmena poradi ci jine spolecne veci)
        Hana_Navigation::instance()->delete_navigation_cache($this->page_category);
@@ -180,4 +191,8 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir);
     }
     
+    protected function _form_action_icon_image_delete($data)
+    {
+        $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir, false, false, false, 'icon_src', 'ext', false);
+    }
 }
