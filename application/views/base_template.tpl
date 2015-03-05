@@ -50,14 +50,43 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>{$page_name} - {$page_title}</title>
+   <link rel="stylesheet" href="{$media_path}css/main.css"/>
+   <script src="{$media_path}js/jquery.js" type="application/javascript"></script>
+   <script src="{$media_path}js/main.js" type="application/javascript"></script>
+
 </head>
 <body>
-   {$web_owner.default_title}<br>
-   {widget controller="navigation" action="main"} <br>
+   <header class="wrapper pie">
+      <div class="makeMeThird">
+         <a href="{$url_base}"><img src="{$media_path}img/layout/logo.png" alt="{$web_owner.default_title}"/></a>
+      </div>
+      <div class="makeMeThird">
+         <h2>{$web_owner.default_description}</h2>
+      </div>
+      <div class="makeMeThird pullRight">
+         <a href=""><img src="{$media_path}img/layout/cs.png" alt=""/></a>
+         <a href=""><img src="{$media_path}img/layout/en.png" alt=""/></a>
+         <a href=""><img src="{$media_path}img/layout/de.png" alt=""/></a>
+      </div>
+   </header>
+   {widget controller="navigation" action="main"}
+   <section>
+      <article>
+         <div class="wrapper">
+	     {$main_content}
+        </div>
+      </article>
+   </section>
+   <footer>
+        <div class="wrapper pie">
+            <div class="makeMeHalf">
+            </div>
+            <div class="makeMeHalf">
+               <iframe src="{$web_owner.map_url}" width="400" height="300" frameborder="0" style="border:0"></iframe>
+            </div>
+        </div>
+   </footer>
 
-	{$main_content}
-
-   <br><iframe src="{$web_owner.map_url}" width="400" height="300" frameborder="0" style="border:0"></iframe>
-</body>
+   </body>
 </html>
