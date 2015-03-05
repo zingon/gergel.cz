@@ -53,15 +53,15 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         if($this->max_tree_level>1)
         {
             $this->auto_edit_table->row("parent_id")->type("selectbox")->label("Nadřazená stránka")->item_settings(array("max_tree_level"=>$this->max_tree_level))->data_src(array("column_name"=>"nazev","orm_tree"=>true,"null_row"=>"---","language"=>true,"condition"=>array("page_category_id","=",$this->page_category)))->set();
-            $this->auto_edit_table->row("direct_to_sublink")->type("checkbox")->label("Na první podstránku")->set();      
+            //$this->auto_edit_table->row("direct_to_sublink")->type("checkbox")->label("Na první podstránku")->set();      
         }
         
         $this->auto_edit_table->row("description")->type("edit")->label("Popis")->set();
         $this->auto_edit_table->row("keywords")->type("edit")->label("Klíčová slova")->set();
         //$this->auto_edit_table->row("indexpage")->type("checkbox")->label("Hlavní stránka")->set();
         //$this->auto_edit_table->row("protected")->type("checkbox")->label("Chráněná (pro odborníky)")->set();
-        $this->auto_edit_table->row("show_child_pages_index")->type("checkbox")->label("Hlavní stránka")->set();
-        $this->auto_edit_table->row("show_contactform")->type("checkbox")->label("Vložit kontaktní formulář")->set();
+        //$this->auto_edit_table->row("show_child_pages_index")->type("checkbox")->label("Hlavní stránka")->set();
+        //$this->auto_edit_table->row("show_contactform")->type("checkbox")->label("Vložit kontaktní formulář")->set();
         $this->auto_edit_table->row("zobrazit")->type("checkbox")->data_src(array("related_table_1"=>"route"))->default_value(1)->label("Zobrazit")->set();
         //$this->auto_edit_table->row("no_link")->type("checkbox")->default_value(0)->label("Vypnout odkaz")->set();
 
