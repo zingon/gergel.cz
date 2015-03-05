@@ -1,0 +1,5 @@
+světlá: #BBD0ED
+tmavá: #AFC4DF
+střední: #B0C5E2
+text-tmavá: #46576B
+supersvětlá: #C3DBFD

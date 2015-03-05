@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.vzak.cz/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/index/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/reference/prehled-referenci/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/kontakty/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/reference/comenia-vzdelavaci-agentura/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/reference/winemarket/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/reference/fibichova-51/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.vzak.cz/reference/podlahy-pardubice-jan-horak/</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+</urlset>
