@@ -1,4 +1,4 @@
 /ftpsync.settings
 /application/cache/*.php
 /application/logs/*.php
-/application/config
+/application/config/database.php

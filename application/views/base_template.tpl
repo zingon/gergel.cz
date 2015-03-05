@@ -53,6 +53,9 @@
 	<title></title>
 </head>
 <body>
+   Gergel <br>
+   {widget controller="navigation" action="main"} 
+
 	{$main_content}
 </body>
 </html>
