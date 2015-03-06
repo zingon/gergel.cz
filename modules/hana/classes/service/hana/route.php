@@ -138,7 +138,9 @@ class Service_Hana_Route
             foreach($result as $row)
             {
                 $result_array[$lang_array[$row->language_id]]=$row->nazev_seo;
+
             }
+
         }
         else
         {

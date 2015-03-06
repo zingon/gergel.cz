@@ -64,18 +64,15 @@
       <div class="makeMeThird">
          <h2>{$web_owner.default_description}</h2>
       </div>
-      <div class="makeMeThird pullRight">
-         <a href=""><img src="{$media_path}img/layout/cs.png" alt=""/></a>
-         <a href=""><img src="{$media_path}img/layout/en.png" alt=""/></a>
-         <a href=""><img src="{$media_path}img/layout/de.png" alt=""/></a>
-      </div>
+      {widget controller="site" action="languagebox"}
+     
    </header>
    {widget controller="navigation" action="main"}
    <section>
       <article>
          <div class="wrapper">
-	     {$main_content}
-        </div>
+	        {$main_content}
+         </div>
       </article>
    </section>
    <footer>

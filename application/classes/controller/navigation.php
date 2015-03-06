@@ -12,7 +12,9 @@ class Controller_Navigation extends Controller
     {
         //die(print_r(Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id())));
         $nav=new View("navigation/main");
-        $nav->links     = Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id());
+        $links = Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id());
+        $nav->index_link = array_shift($links);
+        $nav->links     =  $links;
         $nav->sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
         $this->request->response=$nav->render();  
     }

@@ -181,6 +181,8 @@ class Controller_Site extends Controller {
     public function action_languagebox() {
         $languagebox = new View("language_box_widget");
         $languagebox->languages = Service_Route::get_baselang_links_group($this->application_context->get_actual_route());
+        $languagebox->index_languages = Service_Route::get_baselang_links_group(Service_Route::get_page_route_by_nazev_seo('index'));
+        $languagebox->all_langs = Kohana::$config->load('languages')->get("mapping");
         $this->request->response = $languagebox->render();
     }
 
