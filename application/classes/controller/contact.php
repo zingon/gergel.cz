@@ -10,14 +10,14 @@ class Controller_Contact extends Controller
     /**
      * Zobrazi kontaktni formular (samostatna stranka vcetne formulare).
      */
-    public function action_index()
+    /*public function action_index()
     {
        $route_id=$this->application_context->get_route_id();
        $template=new View("contact/detail");
        $template->item=Service_Page::get_page_by_route_id($route_id);
        $this->request->response=$template->render(); 
     }
-    
+    */
     /**
      * Zobrazi samostatny kontaktni formular.
      */
@@ -42,8 +42,9 @@ class Controller_Contact extends Controller
         $form_data["nazev_projektu"]=$this->application_context->get_name();
         $form_data["nazev_stranky"]=$this->application_context->get_title();
         $form_data["url"]=$this->application_context->get_full_url();
-         
-        $result=Service_Forms::send_default_form($form_data, "contact", $this->response_object,"","",$sender_email,$sender_name);
+        $data["file"]=$_FILES['file'];
+        
+        $result=Service_Forms::send_default_form($form_data, "contact", $this->response_object,"","",$sender_email,$sender_name,$data);
         if($result){
             $this->response_object->set_redirect(!empty($on_success_redirect_to)?$on_success_redirect_to:true);
             $this->response_object->set_message(__("Zpráva z kontaktního formuláře byla zaslána"), Hana_Response::MSG_PROCESSED);

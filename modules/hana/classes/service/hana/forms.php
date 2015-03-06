@@ -53,8 +53,10 @@ class Service_Hana_Forms
             $response_object->set_errors(array($form_code=>$form_orm->validate()->errors('form_errors')));
             $response_object->set_data($form_data);
             $response_object->set_status(false);
+            print_r($form_orm->validate()->errors('form_errors'));
             return false;
         }else{
+
             // validace probehla - sestaveni e-mailu
             $mail_template = new View("emails/".$form_code);
 
@@ -64,6 +66,19 @@ class Service_Hana_Forms
             $message = $mail_template->render();
             if(!empty($sender_email)) $data["queue_from_email"] = $sender_email;
             if(!empty($sender_name)) $data["queue_from_name"] = $sender_name;
+             
+                if(!empty($_FILES['file'])){
+                    try{
+                        $data['file_attachment'] = $_FILES['file']['tmp_name'];  
+                    } catch (Exception $e) {
+                        echo "fuck";
+                    }
+                }
+            
+               
+               
+                
+        
 
             $result = Service_Email::process_email($message, "form_".$form_code, $mail_to_email, $mail_to_name, $data);
 
