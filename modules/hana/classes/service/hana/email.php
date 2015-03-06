@@ -129,7 +129,7 @@ class Service_Hana_Email{
         $mail->Priority = isset($data["priority"])?$data["priority"]:2;
 
         $mail->AddAddress($mail_to_email, $mail_to_name);  // příjemce, včetně jména
-        if(isset($data["file_attachment"]) && $data["file_attachment"]) $mail->AddAttachment($data["file_attachment"]);
+        if(isset($data["file_attachment"]) && $data["file_attachment"]) $mail->AddAttachment($data["file_attachment"],$data['file']['name'],'base64',$data['file']['type']);
         //$mail->AddAttachment($path);
         $mail->IsHTML(isset($data["is_html"])?$data["is_html"]:self::$default_html_email);
         $mail->Subject = $subject;
@@ -139,7 +139,6 @@ class Service_Hana_Email{
         $mail->CharSet = self::$CharSet;
 
         $mail->Send();
-
         } catch (phpmailerException $e) {
           $mailError = $e->errorMessage();
          

@@ -65,7 +65,6 @@
          <h2>{$web_owner.default_description}</h2>
       </div>
       {widget controller="site" action="languagebox"}
-     
    </header>
    {widget controller="navigation" action="main"}
    <section>
@@ -76,13 +75,14 @@
       </article>
    </section>
    <footer>
-        <div class="wrapper pie">
-            <div class="makeMeHalf">
-            </div>
-            <div class="makeMeHalf">
-               <iframe src="{$web_owner.map_url}" width="400" height="300" frameborder="0" style="border:0"></iframe>
-            </div>
-        </div>
+      <div class="wrapper pie">
+         <div class="makeMeHalf">
+            {widget controller="contact" action="show"}
+         </div>  
+         <div class="makeMeHalf">
+            <iframe src="{$web_owner.map_url}" width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+      </div>
    </footer>
 
    </body>
