@@ -191,6 +191,34 @@ th {
 .iAmGhost {
   opacity: 0;
 }
+/**
+ * A mixin which helps you to add depth to elements according to the Google Material Design spec:
+ * http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
+ *
+ * Please note that the values given in the specification cannot be used as is. To create the same visual experience
+ * the blur parameter has to be doubled.
+ *
+ * Author: Florian Kutschera (@gefangenimnetz), Conceptboard GmbH (@conceptboardapp)
+ *
+ * Example usage:
+ *
+ * .card {
+ *     width: 95px;
+ *     height: 95px;
+ *     background: #f4f4f4;
+ *     -webkit-transition: all 250ms;
+ *     -moz-transition: all 250ms;
+ *     transition: all 250ms;
+ *     .BoxShadowHelper(1);
+ *     &:hover {
+ *         .BoxShadowHelper(3);
+ *         -webkit-transform: translateY(-5px);
+ *         -moz-transform: translateY(-5px);
+ *         transform: translateY(-5px);
+ *     }
+ * }
+ *
+ */
 .cleaner {
   clear: both;
 }
@@ -301,29 +329,45 @@ html .pullRight img {
   }
 }
 .makeMeButton {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  padding: 10px 50px 10px 50px;
+  display: inline-block;
+  transition: All 100ms ease;
+  transform: translate(0, 0px);
+  background: #de392c;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RlMzkyYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjMjFlMTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #de392c 0%, #c21e11 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #de392c), color-stop(100%, #c21e11));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #de392c 0%, #c21e11 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #de392c 0%, #c21e11 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #de392c 0%, #c21e11 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #de392c 0%, #c21e11 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#de392c', endColorstr='#c21e11', GradientType=0);
+  /* IE6-8 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .makeMeButton:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
+  color: white;
+  transform: translate(0, -2px) scale(1.005);
+  transition: 100ms;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+a.makeMeButton,
+a:visited.makeMeButton {
+  color: white;
+}
+a.makeMeButton:hover,
+a:visited.makeMeButton:hover {
+  color: white;
 }
 header {
   padding: 45px 20px 0 20px;
@@ -416,6 +460,38 @@ footer {
   min-width: 100%;
   background: url("../img/layout/footer.png") no-repeat;
   background-size: 100% 100%;
+}
+footer > .wrapper {
+  background: none;
+}
+#intro {
+  text-align: center;
+  background: none;
+  margin-top: 50px;
+  color: #393939;
+  font-size: 13px;
+}
+#intro img {
+  transition: All 2000ms ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 50%;
+}
+#intro > div:hover img {
+  transform: scale(1.1);
+  transition: 3000ms;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+#intro h4 {
+  text-transform: uppercase;
+  margin: 30px 0 20px 0;
+}
+#intro > .makeMeThird {
+  box-sizing: border-box;
+  padding: 10px 30px 10px 30px;
+}
+#intro > .makeMeThird:nth-child(2) {
+  border-left: 1px solid rgba(0, 0, 0, 0.17);
+  border-right: 1px solid rgba(0, 0, 0, 0.17);
 }
 body {
   min-width: 100%;
