@@ -9,23 +9,31 @@
 		<textarea rows="6" name="contactform[zprava]" class="{if isset($errors.zprava)}error{/if}" required></textarea>
 		
 	</div>
-	<div class="makeMeHalf"><input type="text" class="show_name"></div>
+	<div class="makeMeHalf">
+		<input type="text" class="show_name" readonly>
+	</div>
 	<div class="makeMeHalf">
 		<div class="makeMeHalf">
-
-			<label for="file">{translate str="přidat soubor"}</label>
-			
-			<input type="file" name="file">
+			<button type="button" id="choseFile">{translate str="přidat soubor"}</button>
 		</div>
-		<div class="makeMeHalf"><button type="submit" name="send" class="button right red tiny radius no-border">ODESLAT</button></div>
+		<div class="makeMeHalf">
+			<button type="submit" name="send" class="button right red tiny radius no-border">{translate str="ODESLAT"}</button>
+		</div>
 	</div>
 
+	<input type="file" name="file" class="makeMeHidden">
 	{hana_secured_post action="send" module="contact"}
 </form>
+{literal}
 <script type="text/javascript">
+$('#choseFile').click(function () {
+	$('input[type="file"]').click();
+});
+
 $('input[type="file"]').change(function(){
 	if (this.files && this.files[0]) {
    		$(".show_name").val(this.files[0].name);
 	}
 });
 </script>
+{/literal}

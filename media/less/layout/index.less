@@ -1,0 +1,29 @@
+#intro {
+  text-align: center;
+  background: none;
+  margin-top: 50px;
+  color: #393939;
+  font-size: 13px;
+  img {
+    transition: All 2000ms ease;
+    .BoxShadowHelper(1);
+    border-radius: 50%;
+  }
+  >div:hover img {
+    transform: scale(1.1);
+    transition: 3000ms;
+    .BoxShadowHelper(2);
+  }
+  h4 {
+    text-transform: uppercase;
+    margin: 30px 0 20px 0;
+  }
+  >.makeMeThird {
+    box-sizing: border-box;
+    padding: 10px 30px 10px 30px;
+  }
+  >.makeMeThird:nth-child(2) {
+    border-left: 1px solid rgba(0, 0, 0, 0.17);
+    border-right: 1px solid rgba(0, 0, 0, 0.17);
+  }
+}

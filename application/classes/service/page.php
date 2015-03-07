@@ -63,6 +63,7 @@ class Service_Page extends Service_Hana_Page
         $result_data = array();
 
         $nodes = orm::factory("page")
+                    ->join('routes')->on("page_data.route_id","=","routes.id")
                     ->where("parent_id","=",$parent_id)
                     ->where("language_id","=",$language_id)
                     ->limit($limit)
@@ -70,6 +71,7 @@ class Service_Page extends Service_Hana_Page
 
         foreach($nodes as $node){
             $result_data[$node->id] = $node->as_array();
+            $result_data[$node->id]['nazev_seo'] = $node->nazev_seo;
             $dirname = self::$photos_resources_dir . self::$navigation_module. '/item/images-' . $node->id.'/';
             
             if($node->icon_src && file_exists( str_replace('\\', '/', DOCROOT) . $dirname . $node->icon_src . '-t1.png')){
