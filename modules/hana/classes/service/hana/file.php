@@ -250,7 +250,7 @@ class Service_Hana_File {
     {
         //die($orm_row_id." ".$imagesrcname." ".$images_dir." ".$image_settings." ".$image_name);
         // vytvorim adresar
-        $dirpath=str_replace('\\', '/',DOCROOT).self::$files_resource_dir.$files_dir."/files-".$folder_id."/";
+        $dirpath=str_replace('\\', '/',DOCROOT).self::$files_resource_dir.$files_dir."files-".$folder_id."/";
         if(!file_exists($dirpath)) mkdir($dirpath);
 
         $uploadfile = $dirpath.$filename_full;

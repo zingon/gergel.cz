@@ -11,6 +11,8 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
 {
     protected $page_category=3; // typ stranek, ktere edituje tento kontroler
     protected $item_name_property=array("nazev"=>"s názvem");
+
+
     
     protected $max_tree_level=2;
     
@@ -21,6 +23,10 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         //$this->action_buttons=array_merge($this->action_buttons,array("odeslat_3"=>array("name"=>"odeslat_3","value"=>"odeslat a editovat galerii","hrefid"=>"page/item/gallery/")));
         //$this->action_buttons=array_merge($this->action_buttons,array("odeslat_2"=>array("name"=>"odeslat_na_dalsi","value"=>"odeslat a editovat další")));
         
+        $this->subject=strtolower($this->orm->class_name);
+        $this->subject_col_id_name=$this->subject."_id";
+        $this->subject_files_name=$this->subject."_file";
+
         parent::before();
     }
     
@@ -79,9 +85,19 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         $this->auto_edit_table->row("uvodni_popis")->type("editor")->label("Úvodní text")->set();
         
         $this->auto_edit_table->row("nav_class")->type("edit")->label("Třída prvku")->set();
-        
-        
-        
+        $result=DB::select("module_id")->from("routes")->join("page_data")->on("routes.id","=","page_data.route_id")->where("page_id","=",$this->orm->id)->where("routes.language_id","=",1)->execute()->current();
+        if($result["module_id"]==13){
+            $this->auto_edit_table->row("L2")->variant("one_col")->value("Soubory připojené k produktu")->type("label")->set();
+
+            if($this->orm->id)
+            {
+                $this->auto_edit_table->row("page_file")->item_settings(array("orm"=>$this->orm,"title"=>"Soubor","item"=>"nazev","description"=>"","value"=>array("page_file_data.nazev","phodnota"),"files_order_by"=>array("nazev"=>"asc")))->value("Seznam souborů")->type("microeditfile")->set();
+            }
+            else
+            {
+                $this->auto_edit_table->row("L12")->value("Před přidáváním souborů musí být produkt nejprve uložen")->type("text")->set();
+            }
+        }
         // obsluzny jquery
         $jquery='
             $(document).ready(function(){
@@ -195,4 +211,79 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
     {
         $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir, false, false, false, 'icon_src', 'ext', false);
     }
+
+    protected function _form_action_microedit_page_file_add($data)
+    {
+        $errors="";
+        // primitivni predvalidovani dat
+        //if(!$data["nazev"]) $errors["nazev"]="musí být zadán název";
+        if(!$data["file_id"])
+        {
+            // prvni zadavani - musi byt zdroj obrazku a pokud neni nazev, vytvori se z tohoto zdroje
+            if(!$_FILES['microedit_file_src']["name"]) $errors["src"]="musí být vybrán soubor obrázku";
+            if(empty($errors) && !$data["nazev"]) $data["nazev"]=Service_Hana_File::get_raw_file_name($_FILES['microedit_file_src']['name']);
+        }
+        else
+        {
+            // editace - nemusi byt zdroj obrazku
+
+            if(!$_FILES['microedit_file_src']["name"])
+            {
+                // 1) neni obrazek - musi byt nazev
+                if(!$data["nazev"]) $errors["nazev"]="název obrázku musí být zadán";
+            }
+            else
+            {
+                // 2) je obrazek - pokud neni nazev - pouziju opet nazev z obrazku
+                if(!$data["nazev"]) $data["nazev"]=Service_Hana_File::get_raw_file_name($_FILES['microedit_file_src']['name']);
+            }
+
+        }
+        // validace probehly, data jsou predzpracovana, prejdu k procesu jejich ulozeni
+
+        // vlastni zpracovani dat
+        if(empty($errors))
+        {
+            
+            // ziskani vychoziho ormka v zavislosti na tom, zda jde o editaci nebo novou polozku
+            if($data["file_id"])
+            {
+                $subject_files=orm::factory($this->subject_files_name)->language($this->orm->get_selected_language_id())->where($this->subject."_files.id","=",$data["file_id"])->find();
+               
+            }
+            else
+            {
+                $subject_files=orm::factory($this->subject_files_name)->language($this->orm->get_selected_language_id());
+            }
+
+            // predam data ke zpracovani a ulozeni modulove servise
+            $result=$this->module_service->insert_file($subject_files, $this->subject_col_id_name, $this->item_id, "microedit_file_src", $this->subject_dir, $data);
+        }
+
+        // pokud servisa vrati chybu, pridam ji do chyb
+        if(isset($result) && $result !== true) $errors=$result;
+
+        // zhodnoceni vysledku
+        if($errors)
+        {
+            // neuspesne zpracovani dat
+            $this->data_processing_errors=$errors; // nastaveni chyby
+            $data["action"]="main_gallery_editphoto"; // toto nastaveni zpusobi, ze se otevre znovu dialogove okno
+            return($data);
+
+        }
+        else
+        {
+            // uspesne zpracovani dat
+            $this->data_saved=true;
+        }
+    }
+
+    protected function _form_action_microedit_page_file_delete($data)
+    {
+        $orm=orm::factory($this->subject_files_name);
+        $this->module_service->delete_file($data["delete_file_id"], $this->subject_dir, $orm, $this->subject_col_id_name);
+        $this->data_saved=true;
+    }
+
 }

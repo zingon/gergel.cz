@@ -9,6 +9,7 @@ class Model_Page extends ORM_Language {
 protected $_has_many = array(
       'page_photos' => array(),
       'page_slideshows' => array(),
+      'page_files' => array(),
   );
 
     // Validation rules
