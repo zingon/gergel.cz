@@ -67,13 +67,8 @@
       {widget controller="site" action="languagebox"}
    </header>
    {widget controller="navigation" action="main"}
-   <section>
-      <article>
-         <div class="wrapper">
+
 	        {$main_content}
-         </div>
-      </article>
-   </section>
    <footer>
       <div class="wrapper pie">
          <div class="makeMeHalf">
