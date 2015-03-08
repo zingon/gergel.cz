@@ -69,6 +69,14 @@ class Service_Catalog_Category implements Interface_Searchable
                 $return[$i]["children"] = self::get_categories_by_parent_id($cat->id, $cat->language_id, $levels);
             }
 
+            
+
+            $dirname=self::$photos_resources_dir."catalog/category/images-".$cat->id."/";
+            $return[$i]["photo_detail"]="";
+            if($cat->photo_src && file_exists(str_replace('\\', '/',DOCROOT).$dirname.$cat->photo_src."-t1.png"))
+            {
+                $return[$i]["photo_detail"]=url::base().$dirname.$cat->photo_src."-t1.png";
+            }
             $i++;
         }
 

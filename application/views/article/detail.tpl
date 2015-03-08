@@ -1,9 +1,15 @@
-<h1>{$item.nazev}</h1>
-<div>
-<p style="float: left">
-	<img src="{$item.photo}">
-	{$item.popis}
-</p>
-
-</div>
-<div style="clear: left"></div>
+<section>
+    <article>
+        <div class="wrapper">
+			<h1>{$item.nazev}</h1>
+			<div class="pie">
+				<div class="makeMeHalf pullLeft">
+					{$item.popis}
+				</div>
+				<div class="makeMeHalf pullRight">
+					<img src="{$item.photo}">
+				</div>
+			</div>
+		</div>
+	</article>
+</section>

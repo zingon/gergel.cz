@@ -29,7 +29,7 @@ class Controller_Admin_Cz_Catalog_Category_Edit extends Controller_Hana_Edit
         $this->auto_edit_table->row("keywords")->type("edit")->label("Klíčová slova")->set();
 
         $this->auto_edit_table->row("zobrazit")->type("checkbox")->default_value(1)->label("Zobrazit")->set();
-        $this->auto_edit_table->row("homepage")->type("checkbox")->default_value(1)->label("Zobrazit na úvodní stránce")->set();
+        //$this->auto_edit_table->row("homepage")->type("checkbox")->default_value(1)->label("Zobrazit na úvodní stránce")->set();
         //$this->auto_edit_table->row("contact_form")->type("checkbox")->default_value(1)->label("Vložit kontaktní formulář")->set();
 
         $this->auto_edit_table->row("main_image_src")->type("filebrowser")->label("Zdroj obrázku")->set();
@@ -37,7 +37,7 @@ class Controller_Admin_Cz_Catalog_Category_Edit extends Controller_Hana_Edit
 
         //$this->auto_edit_table->row("sec_image_src")->type("filebrowser")->label("Zdroj obrázku (červený)")->set();
         //$this->auto_edit_table->row("sec_image")->type("image")->item_settings(array("db_col_name"=>"sec_src","dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
-        $this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text (stručný popis)")->set();
+        //$this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text (stručný popis)")->set();
         $this->auto_edit_table->row("popis")->type("editor")->label("Text")->set();
 
     }

@@ -26,8 +26,10 @@ class Controller_Catalog extends Controller
         $category = Service_Catalog_Category::get_product_category_by_route_id($route_id);
         $sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
         end($sel_links);
+        $products = Service_Catalog::get_catalog_items_list($category['id'],$this->application_context->get_actual_language_id());
         $template = new View("catalog/detail");
         $template->item = $category;
+        $template->products = $products;
         $template->prev = current($sel_links);
         $this->request->response=$template->render();
     }

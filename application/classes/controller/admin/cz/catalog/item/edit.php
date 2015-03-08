@@ -28,7 +28,7 @@ class Controller_Admin_Cz_Catalog_Item_Edit extends Controller_Hana_Edit
     {
         $this->auto_edit_table->row("id")->item_settings(array("with_hidden"=>true))->label("# ID")->set();
         $this->auto_edit_table->row("nazev")->type("edit")->label("Název")->condition("Položka musí mít minimálně 3 znaky.")->set();
-        //$this->auto_edit_table->row("product_category_id")->type("selectbox")->label("Kategorie")->data_src(array("related_table_1"=>"product_category","column_name"=>"nazev","condition"=>array("zobrazit","=",1),"orm_tree"=>true))->set();
+        $this->auto_edit_table->row("product_category_id")->type("selectbox")->label("Kategorie")->data_src(array("related_table_1"=>"product_category","column_name"=>"nazev","condition"=>array("zobrazit","=",1),"orm_tree"=>true))->set();
         //$this->auto_edit_table->row("product_category_id")->type("selectbox")->label("Kategorie")->item_settings(array("HTML"=>array("multiple"=>"multiple","style"=>"height: 200px")))->data_src(array("related_table_1"=>"product_categories","column_name"=>"nazev","orm_tree"=>true,"multiple"=>true,"condition"=>array("language_id","=",1)))->set();
         
         $this->auto_edit_table->row("nazev_seo")->type("edit")->data_src(array("related_table_1"=>"route"))->label("Název SEO")->condition("(Pokud nebude položka vyplněna, vygeneruje se automaticky z názvu.)")->set();
@@ -37,18 +37,19 @@ class Controller_Admin_Cz_Catalog_Item_Edit extends Controller_Hana_Edit
         $this->auto_edit_table->row("keywords")->type("edit")->label("Klíčová slova")->set();
         
         $this->auto_edit_table->row("zobrazit")->type("checkbox")->default_value(1)->label("Zobrazit")->set();
-        $this->auto_edit_table->row("homepage")->type("checkbox")->default_value(1)->label("Zobrazit na úvodní stránce")->set();
+        //$this->auto_edit_table->row("homepage")->type("checkbox")->default_value(1)->label("Zobrazit na úvodní stránce")->set();
 
-        $this->auto_edit_table->row("main_image_src")->type("filebrowser")->label("Zdroj obrázku (bílý)")->set();
-        $this->auto_edit_table->row("main_image")->type("image")->item_settings(array("dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
+        //$this->auto_edit_table->row("main_image_src")->type("filebrowser")->label("Zdroj obrázku (bílý)")->set();
+        //$this->auto_edit_table->row("main_image")->type("image")->item_settings(array("dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
 
-        $this->auto_edit_table->row("sec_image_src")->type("filebrowser")->label("Zdroj obrázku (červený)")->set();
-        $this->auto_edit_table->row("sec_image")->type("image")->item_settings(array("db_col_name"=>"sec_src","dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
+        //$this->auto_edit_table->row("sec_image_src")->type("filebrowser")->label("Zdroj obrázku (červený)")->set();
+        //$this->auto_edit_table->row("sec_image")->type("image")->item_settings(array("db_col_name"=>"sec_src","dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
         //$this->auto_edit_table->row("youtube_code")->type("edit")->label("Youtube kód")->condition("Youtube kód ve tvaru např.: http://youtu.be/_cEzpe04gOo")->set();
 
 
-        $this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text (stručný popis)")->set();
+        //$this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text (stručný popis)")->set();
         $this->auto_edit_table->row("popis")->type("editor")->label("Text")->set();
+        $this->auto_edit_table->row("odborne_informace")->type("editor")->label("Technické informace")->set();
         //$this->auto_edit_table->row("parametry")->type("editor")->label("Parametry")->set();
 
         //$this->auto_edit_table->row("L2")->variant("one_col")->value("Soubory připojené k produktu")->type("label")->set();
@@ -85,7 +86,7 @@ class Controller_Admin_Cz_Catalog_Item_Edit extends Controller_Hana_Edit
     }
 
     
-    protected function _form_action_main_postvalidate($data) {
+    /*protected function _form_action_main_postvalidate($data) {
        parent::_form_action_main_postvalidate($data);
 
        // ulozim k produktu reference na vybrane kategorie
@@ -106,28 +107,28 @@ class Controller_Admin_Cz_Catalog_Item_Edit extends Controller_Hana_Edit
             $this->module_service->insert_image("sec_image_src", $this->subject_dir, $image_settings, $this->orm->route->nazev_seo.'_red', true, 'png', 'sec_src');
         }
 
-    }
+    }*/
 
     /**
      * Akce na smazani obrazku !
      * @param <type> $data
      */
-    protected function _form_action_main_image_delete($data)
+    /*protected function _form_action_main_image_delete($data)
     {
         $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir, false, false, false, 'photo_src', 'ext', false);
-    }
+    }*/
 
     /**
      * Akce na smazani obrazku !
      * @param <type> $data
      */
-    protected function _form_action_sec_image_delete($data)
+   /* protected function _form_action_sec_image_delete($data)
     {
         $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir, false, false, false, 'sec_src', 'ext', false);
-    }
+    }*/
     
     
-    protected function _form_action_microedit_product_file_add($data)
+   /* protected function _form_action_microedit_product_file_add($data)
     {
         $errors="";
         // primitivni predvalidovani dat
@@ -199,6 +200,6 @@ class Controller_Admin_Cz_Catalog_Item_Edit extends Controller_Hana_Edit
         $orm=orm::factory($this->subject_files_name);
         $this->module_service->delete_file($data["delete_file_id"], $this->subject_dir, $orm, $this->subject_col_id_name);
         $this->data_saved=true;
-    }
+    }*/
 
 }

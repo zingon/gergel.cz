@@ -7,7 +7,7 @@
  * @copyright  (c) 2013 Pavel Herink
  */
 
-class Controller_Admin_Catalog_Item_Gallery extends Controller_Hana_Photoedit
+class Controller_Admin_Cz_Catalog_Item_Gallery extends Controller_Hana_Photoedit
 {
     public function before() {
         $this->orm=new Model_Catalog();
