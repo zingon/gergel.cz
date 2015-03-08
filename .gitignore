@@ -1,6 +1,7 @@
 /ftpsync.settings
-/application/cache/*.php
-/application/logs/*.php
+/application/cache/
+/application/logs/
 /application/config/database.php
 /media/photos/
+/media/files/
 /media/userfiles/
