@@ -76,7 +76,7 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         //$this->auto_edit_table->row("youtube_code")->type("edit")->label("Youtube kód")->condition("vkládejte odkaz na Youtube video ve tvaru např: http://www.youtube.com/embed/l_cb6WtaY0k")->set();
         
         $this->auto_edit_table->row("popis")->type("editor")->label("Hlavní text")->set();
-        $this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text")->set();
+        $this->auto_edit_table->row("uvodni_popis")->type("editor")->label("Úvodní text")->set();
         
         $this->auto_edit_table->row("nav_class")->type("edit")->label("Třída prvku")->set();
         
