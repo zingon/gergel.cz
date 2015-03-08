@@ -8,16 +8,17 @@
 class Controller_Contact extends Controller
 {
     /**
-     * Zobrazi kontaktni formular (samostatna stranka vcetne formulare).
+     * Zobrazi stránku s kontakty
      */
-    /*public function action_index()
+    public function action_index()
     {
        $route_id=$this->application_context->get_route_id();
        $template=new View("contact/detail");
        $template->item=Service_Page::get_page_by_route_id($route_id);
+       $template->map=Service_Contact::get_map();
        $this->request->response=$template->render(); 
     }
-    */
+    
     /**
      * Zobrazi samostatny kontaktni formular.
      */
