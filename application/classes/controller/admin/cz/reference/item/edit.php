@@ -12,6 +12,7 @@ class Controller_Admin_Cz_Reference_Item_Edit extends Controller_Hana_Edit
 		$this->auto_edit_table->row("id")->item_settings(array("with_hidden"=>true))->label("# ID")->set();
         $this->auto_edit_table->row("nazev")->type("edit")->label("Název")->condition("Položka musí mít minimálně 3 znaky.")->set();
         $this->auto_edit_table->row("nazev_seo")->type("edit")->data_src(array("related_table_1"=>"route"))->label("Název SEO")->condition("(Pokud nebude položka vyplněna, vygeneruje se automaticky z názvu.)")->set();
+        $this->auto_edit_table->row("title")->type("edit")->label("Title")->condition("(Pokud nebude položka vyplněna, vygeneruje se automaticky z názvu.)")->set();
 
         $this->auto_edit_table->row("zobrazit")->type("checkbox")->data_src(array("related_table_1"=>"route"))->default_value(1)->label("Zobrazit")->set();
 
@@ -35,6 +36,10 @@ class Controller_Admin_Cz_Reference_Item_Edit extends Controller_Hana_Edit
             $data["nazev_seo"]=seo::uprav_fyzicky_nazev($data["nazev_seo"]);
         }
         
+        if(!$data['title']&& $data["nazev"]){
+          $data['title'] = $data["nazev"];
+        }
+
      	$data["module_id"]=18;
         $data["module_action"]="detail";
         

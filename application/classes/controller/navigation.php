@@ -34,7 +34,7 @@ class Controller_Navigation extends Controller
         // mimo uvodku
         if(!($this->application_context->get_main_controller()=="page" && $this->application_context->get_main_controller_action()=="index"))
         {
-            $breadcrumbs=new View("breadcrumbs");
+            $breadcrumbs=new View("navigation/breadcrumbs");
             $navigation_items=Hana_Navigation::instance()->get_navigation_breadcrumbs();
             //die(print_r($navigation_items));
             $breadcrumbs->items=array_reverse($navigation_items, true);

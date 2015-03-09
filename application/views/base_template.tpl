@@ -66,9 +66,14 @@
       </div>
       {widget controller="site" action="languagebox"}
    </header>
-   {widget controller="navigation" action="main"}
 
-	        {$main_content}
+   {widget controller="navigation" action="main"}
+   {if $url_actual!=$url_homepage}
+      {widget controller="navigation" action="breadcrumbs"}
+   {/if}
+
+	{$main_content}
+   
    <footer>
       <div class="wrapper pie">
          <div class="makeMeHalf">
