@@ -2,6 +2,16 @@
   max-width: @pageWidth;
   margin: 0 auto;
   background-color: @bgColor;
+  @media screen and (max-width: (@pageWidth + 70)) {
+    & {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+.makeMeCenter {
+  margin: 0 auto;
 }
 
 .makeMeHidden {
