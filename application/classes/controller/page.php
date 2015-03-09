@@ -20,7 +20,6 @@ class Controller_Page extends Controller
     {
         $route_id=$this->application_context->get_actual_route();
         $template=new View("page/homepage");
-
         $template->item  = Service_Page::get_page_by_route_id($route_id);
         $this->request->response=$template->render();
     }

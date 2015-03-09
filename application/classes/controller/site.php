@@ -21,7 +21,8 @@ class Controller_Site extends Controller {
         // nastaveni zakladnich globalnich promennych sablonam
         View::set_global("url_base", url::base() . ((Kohana::$index_file) ? (Kohana::$index_file . "/") : ""));
         View::set_global("url_actual", url::base() . ((Kohana::$index_file) ? (Kohana::$index_file . "/") : "") . $this->application_context->get_actual_seo());
-        View::set_global("url_homepage", url::base() . Service_Route::get_language_index_seo($this->application_context->get_actual_language_id()));
+        $index_seo = Service_Route::get_language_index_seo($this->application_context->get_actual_language_id());
+        View::set_global("url_homepage", url::base() . ($index_seo!=""?$index_seo:"index"));
         View::set_global("media_path", url::base() . "media/");
         View::set_global("controller", $this->application_context->get_main_controller());
         View::set_global("controller_action", $this->application_context->get_main_controller_action());
