@@ -1,6 +1,0 @@
-<?php
-return array(
-	'is_integer'         => 'Zadané množství musí být celé kladné èíslo',
-	
-);
-?>
