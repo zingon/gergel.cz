@@ -2,17 +2,17 @@
 	<article>
 		<div class="wrapper">
 			<h1></h1>
-			<div class="pie">
-				<div class="makeMeHalf">
-					<div class="makeMeHalf">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="col-sm-6">
 						<p>{$item.uvodni_popis}</p>
 					</div>
 				</div>
-				<div class="makeMeHalf">
+				<div class="col-sm-6">
 					 <iframe src="{$map}" frameborder="0" style="border:0"></iframe>
 				</div>
 			</div>
-			<div class="pie">
+			<div class="row">
 				{$item.popis}
 			</div>
 		</div>

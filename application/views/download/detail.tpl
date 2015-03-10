@@ -2,7 +2,7 @@
  	<article>
  		<div class="wrapper">
  			<h1>{$item.nazev}</h1>
- 			<div class="pie">
+ 			<div class="row">
  				<p>{$item.popis}</p>
  				<ul>
  					{foreach from=$files item=file key=key name=Files}

@@ -2,7 +2,7 @@
 	<article>
 		<div class="wrapper">
 			<h1>{$item.nazev}</h1>
-			<div class="pie">
+			<div class="row">
 				{$item.popis}
 				{foreach from=$items item=cat key=key name=categories}
 					<div class="makeMeAFifth">
