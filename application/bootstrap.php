@@ -1,13 +1,13 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
 //-- Environment setup --------------------------------------------------------
-$development_base_url="http://localhost/";
+$development_base_url="http://workspace/prace/gergel/";
 $production_base_url="/"; // pokud neni pouzit mod rewrite, je nutno nastavit nazev domeny
 
 /**
 * Set the environment string by the domain (defaults to 'development').
 */
-Kohana::$environment = Kohana::PRODUCTION; //($_SERVER['SERVER_NAME'] !== 'localhost') ? Kohana::PRODUCTION : Kohana::DEVELOPMENT
+Kohana::$environment = Kohana::DEVELOPMENT; //($_SERVER['SERVER_NAME'] !== 'localhost') ? Kohana::PRODUCTION : Kohana::DEVELOPMENT
 /**
  * Set the default time zone.
  *

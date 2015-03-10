@@ -10,7 +10,7 @@
 class Controller_Admin_Cz_Catalog_Category_Edit extends Controller_Hana_Edit
 {
     protected $with_route=true;
-    protected $max_category_level=3;
+    protected $max_category_level=1;
     protected $item_name_property=array("nazev"=>"s názvem");
 
     public function before() {
@@ -30,13 +30,13 @@ class Controller_Admin_Cz_Catalog_Category_Edit extends Controller_Hana_Edit
 
         $this->auto_edit_table->row("zobrazit")->type("checkbox")->default_value(1)->label("Zobrazit")->set();
         $this->auto_edit_table->row("homepage")->type("checkbox")->default_value(1)->label("Zobrazit na úvodní stránce")->set();
-        $this->auto_edit_table->row("contact_form")->type("checkbox")->default_value(1)->label("Vložit kontaktní formulář")->set();
+        //$this->auto_edit_table->row("contact_form")->type("checkbox")->default_value(1)->label("Vložit kontaktní formulář")->set();
 
-        $this->auto_edit_table->row("main_image_src")->type("filebrowser")->label("Zdroj obrázku (bílý)")->set();
+        $this->auto_edit_table->row("main_image_src")->type("filebrowser")->label("Zdroj obrázku")->set();
         $this->auto_edit_table->row("main_image")->type("image")->item_settings(array("dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
 
-        $this->auto_edit_table->row("sec_image_src")->type("filebrowser")->label("Zdroj obrázku (červený)")->set();
-        $this->auto_edit_table->row("sec_image")->type("image")->item_settings(array("db_col_name"=>"sec_src","dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
+        //$this->auto_edit_table->row("sec_image_src")->type("filebrowser")->label("Zdroj obrázku (červený)")->set();
+        //$this->auto_edit_table->row("sec_image")->type("image")->item_settings(array("db_col_name"=>"sec_src","dir"=>$this->subject_dir,"suffix"=>"at","ext"=>"png","delete_link"=>true))->label("Náhled obrázku")->set();
         $this->auto_edit_table->row("uvodni_popis")->type("textarea")->label("Úvodní text (stručný popis)")->set();
         $this->auto_edit_table->row("popis")->type("editor")->label("Text")->set();
 
@@ -84,12 +84,12 @@ class Controller_Admin_Cz_Catalog_Category_Edit extends Controller_Hana_Edit
              $image_settings = Service_Hana_Setting::instance()->get_sequence_array($this->module_key, $this->submodule_key, "photo");
              $this->module_service->insert_image("main_image_src", $this->subject_dir, $image_settings, $this->orm->route->nazev_seo.'_white', true, 'png');
          }
-         if(isset($_FILES["sec_image_src"]) && $_FILES["sec_image_src"]["name"])
+         /*if(isset($_FILES["sec_image_src"]) && $_FILES["sec_image_src"]["name"])
          {
              // nahraju si z tabulky settings konfiguracni nastaveni pro obrazky - tzn. prefixy obrazku a jejich nastaveni
              $image_settings = Service_Hana_Setting::instance()->get_sequence_array($this->module_key, $this->submodule_key, "photo");
              $this->module_service->insert_image("sec_image_src", $this->subject_dir, $image_settings, $this->orm->route->nazev_seo.'_red', true, 'png', 'sec_src');
-         }
+         }*/
 
 
     }
@@ -103,11 +103,11 @@ class Controller_Admin_Cz_Catalog_Category_Edit extends Controller_Hana_Edit
      * Akce na smazani obrazku !
      * @param <type> $data
      */
-    protected function _form_action_sec_image_delete($data)
+  /*  protected function _form_action_sec_image_delete($data)
     {
         $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir, false, false, false, 'sec_src', 'ext', false);
     }
-
+*/
 
  
 }

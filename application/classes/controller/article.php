@@ -34,9 +34,9 @@ class Controller_Article extends Controller
     /**
      * Metoda generujici seznam clanku na uvodce.
      */
-    public function action_homepage_banner_list()
+    public function action_widget()
     {
-        $template=new View("article/widget_list");
+        $template=new View("article/widget");
         $language_id=$this->application_context->get_actual_language_id();
         $template->items=Service_Article::get_article_banner_list($language_id,2);
         //die(print_r(Service_Article::get_article_banner_list($language_id,0,3)));
@@ -46,14 +46,14 @@ class Controller_Article extends Controller
     /**
      * Metoda generujici seznam clanku - uvodka.
      */
-    public function action_homepage_list()
+  /*  public function action_homepage_list()
     {
         $template=new View("article_homepage_list");
         $language_id=$this->application_context->get_actual_language_id();
         $template->items=Service_Article::get_article_list($language_id,0,2,0,true);
         $this->request->response=$template->render();
     }
-    
+    */
     
     /**
      * Metoda generujici vsechny stranky vkladane do hlavniho obsahu.
@@ -70,7 +70,7 @@ class Controller_Article extends Controller
         $this->request->response=$template->render();
     }
     
-    public function action_article_subnav($nazev_seo)
+   /* public function action_article_subnav($nazev_seo)
     {
         $subnav=new View("subnav");
         $links     = Service_Article::get_navigation($this->application_context->get_actual_language_id());
@@ -81,7 +81,7 @@ class Controller_Article extends Controller
         $subnav->sel_links = $sel_links; 
         $this->request->response=$subnav->render();
     }
-
+*/
     
 }
 

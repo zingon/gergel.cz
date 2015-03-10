@@ -7,7 +7,7 @@
  * @copyright  (c) 2010 Pavel Herink
  */
 
-class Controller_Admin_Environment_Mainsetup_Edit extends Controller_Hana_Edit
+class Controller_Admin_Cz_Environment_Mainsetup_Edit extends Controller_Hana_Edit
 {
     protected $with_route=false;
     protected $back_link_url;

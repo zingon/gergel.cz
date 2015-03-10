@@ -20,7 +20,7 @@ class Service_Page extends Service_Hana_Page
 		4 =>'/secondary/slideshow/',
     );
     
-    public static function get_page_photos($page_id, Array $thumbs = array(), $page_category_id = 3)
+    public static function get_page_photos($page_id, $thumbs = array(), $page_category_id = 3)
     {
         $photos = orm::factory("page_photo")
 					->where("page_id","=",$page_id)
@@ -58,43 +58,28 @@ class Service_Page extends Service_Hana_Page
         return $result;
     }
     
-    public static function get_page_slideshow($page_id, Array $thumbs = array(), $page_category_id = 3)
+    public static function get_pages_with_parent($language_id,$parent_id,$limit = 3)
     {
-        $photos = orm::factory("page_slideshow")
-					->where("page_id","=",$page_id)
-					->where("zobrazit","=",1)
-					->language(0)
-					->order_by("poradi","asc")
-					->find_all();
+        $result_data = array();
 
-        $dirname = self::$slideshows_resources_dir . self::$navigation_module . self::$slideshows_subdir[$page_category_id] . 'images-' . $page_id;
-        $result = array();
+        $nodes = orm::factory("page")
+                    ->where("parent_id","=",$parent_id)
+                    ->where("language_id","=",$language_id)
+                    ->limit($limit)
+                    ->find_all();
 
-        foreach($photos as $photo)
-        {
-			$result[]['name'] = $photo->nazev;
-			end($result);
-			$last_id = key($result);
-            $result[$last_id]['description'] = $photo->popis;
-            $result[$last_id]['nazev_seo'] = $photo->popis;
-
-            if (empty($thumbs))
-            {
-                $result[$last_id]["photo"] = url::base() . $dirname . '/' . $photo->photo_src . '-ad.jpg';
+        foreach($nodes as $node){
+            $result_data[$node->id] = $node->as_array();
+            $dirname = self::$photos_resources_dir . self::$navigation_module. '/item/images-' . $node->id.'/';
+            
+            if($node->icon_src && file_exists( str_replace('\\', '/', DOCROOT) . $dirname . $node->icon_src . '-t1.png')){
+                $result_data[$node->id]['icon'] =url::base(). $dirname . $node->icon_src . '-t1.png';
+            } else {
+                $result_data[$node->id]['icon'] = "";
             }
-          
-			foreach ($thumbs as $key => $thumb) {
-				$thumbKey = is_int($key) ? $thumb : $key;
-				$thumb_path = str_replace('\\', '/', DOCROOT) . $dirname . '/' . $photo->photo_src . '-' . $thumbKey . '.jpg';
-				
-				if($photo->photo_src && file_exists($thumb_path)) {
-					$result[$last_id]["photo_$thumb"] = url::base() . $dirname . '/' . $photo->photo_src . '-' . $thumbKey . '.jpg';
-				}
-			}
         }
 
-        return $result;
+        return $result_data;
     }
-    
 }
 ?>

@@ -7,7 +7,7 @@
  * @copyright  (c) 2012 Pavel Herink
  */
 
-class Controller_Admin_Environment_Registry_List extends Controller_Hana_List
+class Controller_Admin_Cz_Environment_Registry_List extends Controller_Hana_List
 {
     protected $with_route=false;
 

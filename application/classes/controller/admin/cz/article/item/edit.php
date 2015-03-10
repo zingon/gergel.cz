@@ -38,7 +38,7 @@ class Controller_Admin_Cz_Article_Item_Edit extends Controller_Hana_Edit
         //$this->auto_edit_table->row("gallery_id")->type("selectbox")->label("Připojit galerii")->data_src(array("related_table_1"=>"gallery","order_by"=>array("poradi","asc"), "null_row" => "Žádná galerie"))->set();
         $this->auto_edit_table->row("uvodni_popis")->type("editor")->label("Úvodní text")->set();
         $this->auto_edit_table->row("popis")->type("editor")->label("Text")->set();
-        $this->auto_edit_table->row("L2")->variant("one_col")->value("Soubory připojené k novince")->type("label")->set();
+        //$this->auto_edit_table->row("L2")->variant("one_col")->value("Soubory připojené k novince")->type("label")->set();
         //$this->auto_edit_table->row("download_id")->type("selectbox")->label("Soubory")->item_settings(array("HTML"=>array("multiple"=>"multiple","style"=>"height: 200px")))->data_src(array("related_table_1"=>"downloads","column_name"=>"nazev","orm_tree"=>false,"multiple"=>true))->set();
 
         //$this->auto_edit_table->row("preferred")->type("checkbox")->value(0)->label("Zobrazit na úvodní straně")->set();
@@ -78,12 +78,12 @@ class Controller_Admin_Cz_Article_Item_Edit extends Controller_Hana_Edit
            $this->module_service->insert_image("main_image_src", $this->subject_dir, $image_settings, $this->orm->route->nazev_seo);
        }
        
-       if(isset($_FILES["wide_image_src"]) && $_FILES["wide_image_src"]["name"])
+     /*  if(isset($_FILES["wide_image_src"]) && $_FILES["wide_image_src"]["name"])
        {
            // nahraju si z tabulky settings konfiguracni nastaveni pro obrazky - tzn. prefixy obrazku a jejich nastaveni
            $image_settings = Service_Hana_Setting::instance()->get_sequence_array($this->module_key, $this->submodule_key, "photo_wide");
            $this->module_service->insert_image("wide_image_src", "article/wide_item/", $image_settings, $this->orm->route->nazev_seo, true, "jpg", "photo_wide_src");
-       }
+       }*/
 
     }
 
@@ -96,8 +96,8 @@ class Controller_Admin_Cz_Article_Item_Edit extends Controller_Hana_Edit
         $this->module_service->delete_image($data["delete_image_id"], $this->subject_dir);
     }
     
-    protected function _form_action_wide_image_delete($data)
+  /*  protected function _form_action_wide_image_delete($data)
     {
         $this->module_service->delete_image($data["delete_image_id"], "article/wide_item/", false, false, false,"photo_wide_src");
-    }
+    }*/
 }

@@ -103,6 +103,13 @@ class Controller_Page extends Controller
         $this->request->response=$subnav->render();
     }
 
+    public function action_widget()
+    {
+        $widget= new View('page/widget');
+        $widget->links=Service_Page::get_pages_with_parent($this->application_context->get_actual_language_id(),16);
+        $this->request->response=$widget->render();
+    }
+
     public function action_sitemap()
     {
         $template=new View("page");

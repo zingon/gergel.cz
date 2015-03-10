@@ -10,7 +10,7 @@
  */
 class Service_Sitemap
 {
-    static $_modules=array("page","article"); // seznam modulu ze kterych se generuje sitemap
+    protected static $_modules=array("page","article"); // seznam modulu ze kterych se generuje sitemap
 
     public static function get_google_sitemap()
     {

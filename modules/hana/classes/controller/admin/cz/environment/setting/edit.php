@@ -32,6 +32,7 @@ class Controller_Admin_Cz_Environment_Setting_Edit extends Controller_Hana_Edit
         $this->auto_edit_table->row("ulice")->type("edit")->label("Ulice")->set();
         $this->auto_edit_table->row("mesto")->type("edit")->label("Město")->set();
         $this->auto_edit_table->row("psc")->type("edit")->label("PSČ")->set();
+        $this->auto_edit_table->row("map_url")->type("textarea")->label("URL Mapy")->set();
         $this->auto_edit_table->row("copyright")->type("edit")->label("Copyright")->set();
         $this->auto_edit_table->row("tel")->type("edit")->label("Telefon")->set();
         $this->auto_edit_table->row("email")->type("edit")->label("E-mail")->condition("(e-mail pro zasílání zpráv z kontaktního formuláře)")->set();
