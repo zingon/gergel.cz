@@ -61,12 +61,12 @@ class Controller_Article extends Controller
     public function action_detail()
     {
         $route_id=$this->application_context->get_route_id();
-        $template=new View("article/detail");
-        $sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
-        end($sel_links);
+        $template=new View("page/detail");
+        //$sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
+        //end($sel_links);
         
         $template->item=Service_Article::get_article_by_route_id($route_id);
-        $template->prev = current($sel_links);
+        //$template->prev = current($sel_links);
         $this->request->response=$template->render();
     }
     

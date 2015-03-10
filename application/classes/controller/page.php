@@ -40,7 +40,6 @@ class Controller_Page extends Controller
         {
             $template=new View("page/detail");
         }
-        
         $template->item=$page;
         $sublinks=((Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id(),self::$current_page_category_id)));
         $template->sublinks=isset($sublinks[$this->application_context->get_actual_seo()]["children"])?$sublinks[$this->application_context->get_actual_seo()]["children"]:array();

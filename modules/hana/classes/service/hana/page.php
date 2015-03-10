@@ -42,13 +42,12 @@ class Service_Hana_Page extends Service_Hana_Module_Base
         
         // cesta k obrazku
         $dirname=self::$photos_resources_dir."page/item/images-".$page_orm->id."/";
-        
 
         if($page_orm->photo_src && file_exists(str_replace('\\', '/',DOCROOT).$dirname.$page_orm->photo_src."-t2.png"))
         {
-            $result_data["photo_detail"]=url::base().$dirname.$page_orm->photo_src."-t2.png";
+            $result_data["photo"]=url::base().$dirname.$page_orm->photo_src."-t2.png";
         } else {
-            $result_data["photo_detail"]="";
+            $result_data["photo"]="";
         }
         
         return $result_data;

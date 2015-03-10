@@ -2,7 +2,7 @@
     <article>
         <div class="wrapper">
 			<h1>{$item.nazev}</h1>
-			<div class="pie">
+			<div class="row">
 				<div class="makeMeHalf pullLeft">
 					{$item.popis}
 				</div>

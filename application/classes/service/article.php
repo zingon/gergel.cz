@@ -74,7 +74,7 @@ class Service_Article extends Service_Hana_Module_Base
             $result_data[$article->id]=$article->as_array();
             $result_data[$article->id]["nazev_seo"]=$article->route->nazev_seo;
             
-            $filename=self::$photos_resources_dir.self::$navigation_module."/item/".self::$photos_resources_subdir."images-".$article->id."/".$article->photo_src."-t3.jpg";
+            $filename=self::$photos_resources_dir.self::$navigation_module."/item/".self::$photos_resources_subdir."images-".$article->id."/".$article->photo_src."-t1.jpg";
             if(file_exists(str_replace('\\', '/',DOCROOT).$filename))
             {
                 $result_data[$article->id]["photo"]=url::base().$filename;
@@ -111,7 +111,7 @@ class Service_Article extends Service_Hana_Module_Base
             $result_data[$article->id]=$article->as_array();
             $result_data[$article->id]["nazev_seo"]=$article->route->nazev_seo;
             
-            $filename=self::$photos_resources_dir.self::$navigation_module."/item/".self::$photos_resources_subdir."images-".$article->id."/".$article->photo_src."-t1.jpg";
+            $filename=self::$photos_resources_dir.self::$navigation_module."/item/".self::$photos_resources_subdir."images-".$article->id."/".$article->photo_src."-t2.jpg";
             if(file_exists(str_replace('\\', '/',DOCROOT).$filename))
             {
                 $result_data[$article->id]["photo"]=url::base().$filename;
