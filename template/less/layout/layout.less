@@ -2,12 +2,19 @@
 @import "navs";
 @import "footer";
 @import "index";
+@import "productInfo";
 @import "vyrobniKapacity";
 
 body {
   min-width: 100%;
   background: url("../img/layout/bgAl.png") no-repeat 0 150px;
   background-size: 100% 502px;
+  @media (max-width: @screen-sm-min) {
+    background-position: 0 300px;
+  }
+  @media (max-width: (@screen-sm-min / 2)) {
+    background-position: 0 400px;
+  }
   article {
     >.wrapper {
       box-sizing: border-box;
