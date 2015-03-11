@@ -16,16 +16,17 @@ class Controller_Navigation extends Controller
         $nav->index_link = array_shift($links);
         $nav->links     =  $links;
         $nav->sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
+        $nav->sel = array_pop($nav->sel_links);
         $this->request->response=$nav->render();  
     }
     
     public function action_secondary($nazev_seo)
 	{
-		$nav = new View("nav");
+		$nav = new View("navigation/second");
 		
-		$links = Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id(), 4);
+		$links = Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id());
 		$nav->links = $links;
-        $nav->sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
+        $nav->sel_link = array_pop(Hana_Navigation::instance()->get_navigation_breadcrumbs());
 		
 		$this->request->response = $nav->render();
 	}
