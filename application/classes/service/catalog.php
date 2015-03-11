@@ -17,7 +17,7 @@ class Service_Catalog extends Service_Hana_Module_Base
 	protected static $photos_resources_dir="media/photos/";
 	protected static $files_resources_dir="media/files/";
 
-	protected static $thumbs = array("big"=>"ad","small"=>"at");
+	protected static $thumbs = array("big"=>"ad","small"=>"at","t1"=>"t1");
 	
 	/**
 	 * Nacte clanek dle route_id
@@ -97,6 +97,8 @@ class Service_Catalog extends Service_Hana_Module_Base
 					foreach (self::$thumbs as $name => $thumb) {
 						if(file_exists(str_replace('\\', '/',DOCROOT).$dirname.$photo->photo_src."-".$thumb.".jpg")){
 							$result_data[$product->id]['photos'][$photo->id][$name] = $dirname.$photo->photo_src."-".$thumb.".jpg";
+						} else{
+							$result_data[$product->id]['photos'][$photo->id][$name] = "";
 						}
 					} 
 				}

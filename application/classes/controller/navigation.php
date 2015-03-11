@@ -19,13 +19,13 @@ class Controller_Navigation extends Controller
         $this->request->response=$nav->render();  
     }
     
-    public function action_secondary($nazev_seo)
+    public function action_category()
 	{
-		$nav = new View("nav");
+		$nav = new View("navigation/category");
 		
-		$links = Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id(), 4);
+		$links = Service_Catalog_Category::get_categories_by_parent_id(0, $this->application_context->get_actual_language_id(),1,5);
 		$nav->links = $links;
-        $nav->sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
+        //$nav->sel_link = array_shift(Hana_Navigation::instance()->get_navigation_breadcrumbs());
 		
 		$this->request->response = $nav->render();
 	}
