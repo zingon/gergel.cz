@@ -1,1 +1,0 @@
-zakladni modely k jednotlivym modulum jsou definovany ve slozce modules/hana/classes/models
