@@ -2,7 +2,7 @@
 {foreach from=$items item=article key=key name=articles}
 	<div class="row newsItem">
 		<div class="col-xs-4">
-			<img src="{$article.photo}">
+			<img src="{$article.photo}" class="img-responsive">
 		</div>
 		<div class="col-xs-8">
 			<h2>{$article.nazev}</h2>
