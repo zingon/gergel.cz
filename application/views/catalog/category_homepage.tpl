@@ -2,13 +2,15 @@
 	<article>
 		<div class="wrapper">
 			<h1>{$item.nazev}</h1>
-			<div class="row">
-				{$item.popis}
+			<p>{$item.popis}</p>
+			<section id="vyrobniKapacityItems" class="row">
 				{foreach from=$items item=cat key=key name=categories}
-					<div class="makeMeAFifth">
+					<div class="col-sm-15">
 						<a href="{$url_base}{$cat.nazev_seo}">
-							<img src="{$cat.photo_detail}"><br>
-							{$cat.nazev}
+							<div>
+								<img src="{$cat.photo_detail}" class="img-responsive" alt="{$cat.nazev}"/>
+								<span>{$cat.nazev}</span>
+							</div>
 						</a>
 					</div>
 				{/foreach}

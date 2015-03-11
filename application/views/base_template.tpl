@@ -63,9 +63,13 @@ Promenne do base_template:
             
         </header>
         {widget controller="navigation" action="main"}
-        {if $url_actual!=$url_homepage}
-        {widget controller="navigation" action="breadcrumbs"}
+        {if $controller eq "catalog" and $controller_action eq "category"}
+            {widget controller="navigation" action="category"}    
         {/if}
+        {if $url_actual!=$url_homepage}
+            {widget controller="navigation" action="breadcrumbs"}
+        {/if}
+
         {$main_content}
 
         <footer>
