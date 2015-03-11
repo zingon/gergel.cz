@@ -1,6 +1,8 @@
 /ftpsync.settings
-/application
-/media
-/modules
-/system
-/.idea
+/application/cache/
+/application/logs/
+/application/config/database.php
+/media/photos/
+/media/files/
+/media/userfiles/
+
