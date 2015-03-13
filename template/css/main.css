@@ -317,6 +317,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 .img-rounded {
   border-radius: 6px;
@@ -1152,6 +1153,47 @@ hr {
     float: left;
   }
 }
+/* columns of same height styles */
+.row-same-height {
+  display: table;
+  width: 100%;
+}
+.col-xs-height {
+  display: table-cell;
+  float: none !important;
+}
+@media (min-width: 768px) {
+  .col-sm-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .col-lg-height {
+    display: table-cell;
+    float: none !important;
+  }
+}
+/* firefox fix */
+.img-responsive {
+  width: 100%;
+}
+/* vertical alignment styles */
+.col-top {
+  vertical-align: top;
+}
+.col-middle {
+  vertical-align: middle;
+}
+.col-bottom {
+  vertical-align: bottom;
+}
 html {
   font-family: 'open-sans', sans-serif;
   color: #3a3a3a;
@@ -1205,6 +1247,9 @@ html a:visited {
 }
 html a:visited:hover {
   color: #d91e0f;
+}
+html .tabulator {
+  padding-left: 2em;
 }
 html ul {
   padding: 0;
@@ -1804,22 +1849,47 @@ footer > .footerBottom .wrapper strong {
 #referenceItems .referenceItem > .row > .col-xs-8 {
   padding-bottom: 45px;
 }
-body {
+#contact .row > div {
+  margin-bottom: 30px;
+}
+#contact .row > div > div iframe {
+  width: 100%;
+}
+#contact .row > div > div > div {
+  background-color: #f3f3f3;
+  padding: 20px;
+  height: 100%;
+}
+#contact .row > div > div > div h2 {
+  text-transform: none;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+#contact .row .cleaner {
+  margin: 0;
+}
+html {
   min-width: 100%;
+  min-height: 100%;
+}
+html body {
+  min-width: 100%;
+  height: 100%;
   background: url("../img/layout/bgAl.png") no-repeat 0 150px;
   background-size: 100% 502px;
 }
 @media (max-width: 768px) {
-  body {
+  html body {
     background-position: 0 300px;
   }
 }
 @media (max-width: 384px) {
-  body {
+  html body {
     background-position: 0 400px;
   }
 }
-body article > .wrapper {
+html body section article > .wrapper {
   box-sizing: border-box;
   padding: 35px;
 }
