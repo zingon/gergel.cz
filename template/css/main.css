@@ -1775,6 +1775,12 @@ footer > .footerBottom .wrapper strong {
     padding-bottom: 5px;
   }
 }
+#referenceItems > .row > div {
+  background-color: #f3f3f3;
+}
+#referenceItems > .row > div img {
+  margin: 20px;
+}
 body {
   min-width: 100%;
   background: url("../img/layout/bgAl.png") no-repeat 0 150px;

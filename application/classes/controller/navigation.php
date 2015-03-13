@@ -16,6 +16,7 @@ class Controller_Navigation extends Controller
         $nav->index_link = array_shift($links);
         $nav->links     =  $links;
         $nav->sel_links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
+        $nav->sel = array_pop($nav->sel_links);
         $this->request->response=$nav->render();  
     }
     
