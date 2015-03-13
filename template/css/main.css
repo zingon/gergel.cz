@@ -1775,11 +1775,34 @@ footer > .footerBottom .wrapper strong {
     padding-bottom: 5px;
   }
 }
-#referenceItems > .row > div {
-  background-color: #f3f3f3;
+#referenceItems .referenceItem {
+  padding: 5px;
 }
-#referenceItems > .row > div img {
-  margin: 20px;
+#referenceItems .referenceItem > .row {
+  background-color: #f3f3f3;
+  padding: 10px;
+}
+#referenceItems .referenceItem > .row > .col-xs-4,
+#referenceItems .referenceItem > .row .col-xs-8 {
+  min-height: 140px;
+}
+#referenceItems .referenceItem > .row > .col-xs-4 img,
+#referenceItems .referenceItem > .row .col-xs-8 img {
+  margin: 10px auto;
+}
+#referenceItems .referenceItem > .row > .col-xs-4 h3,
+#referenceItems .referenceItem > .row .col-xs-8 h3 {
+  color: #d91e0f;
+  font-size: 16px;
+}
+#referenceItems .referenceItem > .row > .col-xs-4 span,
+#referenceItems .referenceItem > .row .col-xs-8 span {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+#referenceItems .referenceItem > .row > .col-xs-8 {
+  padding-bottom: 45px;
 }
 body {
   min-width: 100%;
