@@ -1,7 +1,8 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Service_Reference
+class Service_Reference extends Service_Hana_Module_Base
 {
+
 
 	public static $order_by="poradi";
     public static $order_direction="asc";
@@ -9,6 +10,7 @@ class Service_Reference
     public static $photo_dir = "/media/photos/reference/item/";
 
     protected static $thumbs = array('small'=>'at','big'=>'ad');
+    protected static $navigation_module = "reference";
 
 	public static function get_reference_list($language_id)
 	{
@@ -114,9 +116,5 @@ class Service_Reference
 
 		return $result_data;
 
-	}
-	
-	public static function get_navigation_breadcrumbs($nazev_seo=""){
-		return array();
 	}
 }
