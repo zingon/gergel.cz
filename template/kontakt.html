@@ -49,37 +49,41 @@
         <div class="wrapper">
             <h1>kontakt</h1>
             <div class="row">
-                <div class="col-sm-4">
-                    <div>
-                        <h2>Sídlo firmy:</h2>
-                        <p>
-                            Nábřeží č.p. 599
-                            <br/>
-                            760 01  Zlín
-                            <br/>
-                            tel.: +420 577 434
-                        </p>
-                        <h2>Výrobní středisko:</h2>
-                        <p>
-                            Palackého 134, areál Nestlé
-                            <br/>
-                            769 01  Holešov
-                            <br/>
-                            tel.: +420 573 396 987,
-                            <br/>
-                            <span class="tabulator">+420 573 395 346</span>
-                            <br/>
-                            GSM brána: +420 603 153 464 
-                        </p>
+                <div class="row-same-height">
+                    <div class="col-sm-4 col-sm-height col-top">
+                        <div>
+                            <h2>Sídlo firmy:</h2>
+                            <p>
+                                Nábřeží č.p. 599
+                                <br/>
+                                760 01  Zlín
+                                <br/>
+                                tel.: +420 577 434
+                            </p>
+                            <h2>Výrobní středisko:</h2>
+                            <p>
+                                Palackého 134, areál Nestlé
+                                <br/>
+                                769 01  Holešov
+                                <br/>
+                                tel.: +420 573 396 987,
+                                <br/>
+                                <span class="tabulator">+420 573 395 346</span>
+                                <br/>
+                                GSM brána: +420 603 153 464 
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-8">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5200.989751690255!2d17.54886257281522!3d49.323848922540485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47130cb9ea549b5b%3A0xbe6c96e1ee594ee0!2sGergel+S.r.o.!5e0!3m2!1scs!2scz!4v1425558384913" height="306px" frameborder="0" style="border:0"></iframe>
+                    <div class="col-sm-8 col-sm-height col-top">
+                        <div class="mapa">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5200.989751690255!2d17.54886257281522!3d49.323848922540485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47130cb9ea549b5b%3A0xbe6c96e1ee594ee0!2sGergel+S.r.o.!5e0!3m2!1scs!2scz!4v1425558384913" height="306px" frameborder="0" style="border:0"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="row-same-height">
-                    <div class="col-sm-6 col-sm-height">
+                    <div class="col-sm-6 col-sm-height col-top">
                         <div>
                             <h2>Jednatel, ředitel:</h2>
                             <p>
@@ -91,7 +95,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-sm-height">
+                    <div class="col-sm-6 col-sm-height col-top">
                         <div>
                             <h2>Jednatel, ekonomický ředitel:</h2>
                             <p>
@@ -104,93 +108,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
-                    <div>
-                        <h2>Jednatel, ředitel:</h2>
-                        <p>
-                            ng. Jiří Gergel 
-                            <br/>
-                            mob.: +420 603 482 161
-                            <br/>
-                            jiri.gergel@gergel.cz
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div>
-                        <h2>Jednatel, ekonomický ředitel:</h2>
-                        <p>
-                            Ivana Gergelová
-                            <br/>
-                            tel.: +420 577 434 574
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </article>
-    </section>
-    <footer>
-        <div class="footerTop">
-            <div class="wrapper row">
-                <div class="col-sm-6">
-                    <h2>Napište nám</h2>
-                    <form action="?" method="post" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="text" name="contactform[jmeno]" class="" placeholder="Jméno" required="">
-                                <input type="email" name="contactform[email]" class="" placeholder="Email" required="">
-                                <input type="tel" name="contactform[telefon]" class="" placeholder="Telefon">
-                            </div>
-                            <div class="col-sm-6 footerTextArea">
-                                <textarea name="contactform[zprava]" class="" placeholder="Text" required=""></textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <input type="text" class="show_name" readonly="">
-                            </div>
-                            <div class="col-sm-6 footerButtons">
-                                <div class="col-xs-6">
-                                    <button type="button" id="choseFile" class="makeMeButtonGrey">přidat soubor</button>
-                                </div>
-                                <div class="col-xs-6">
-                                    <button type="submit" name="send" class="makeMeButtonGrey">odeslat</button>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="file" name="file" class="makeMeHidden">
-                        <input type="hidden" name="h_module" value="contact">
-                        <input type="hidden" name="h_action" value="send">
-                        <input type="hidden" name="h_secure" value="69c76325b58865be22ce6dc9f67b2eb1">
-                    </form>
-                    <script type="text/javascript">
-                        $('#choseFile').click(function () {
-                            $('input[type="file"]').click();
-                        });
-                        $('input[type="file"]').change(function(){
-                            if (this.files && this.files[0]) {
-                                $(".show_name").val(this.files[0].name);
-                            }
-                        });
-                    </script>
-                </div>
-                <div class="col-sm-6">
-                    <h2>Kde nás najdete</h2>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5200.989751690255!2d17.54886257281522!3d49.323848922540485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47130cb9ea549b5b%3A0xbe6c96e1ee594ee0!2sGergel+S.r.o.!5e0!3m2!1scs!2scz!4v1425558384913" height="186" frameborder="0" style="border:0"></iframe>
-                        </div>
-                        <div class="col-sm-4">
+                <div class="row-same-height">
+                    <div class="col-sm-6 col-sm-height col-top">
+                        <div>
+                            <h2>Jednatel, ředitel:</h2>
                             <p>
-                                <strong>2015 GERGEL, s.r.o.</strong>
+                                ng. Jiří Gergel 
                                 <br/>
-                                Nábřeží č.p. 599
+                                mob.: +420 603 482 161
                                 <br/>
-                                760 01  Zlín
-                                <br/>
-                                <br/>
-                                email: info@gergel.cz
+                                jiri.gergel@gergel.cz
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-sm-height col-top">
+                        <div>
+                            <h2>Jednatel, ekonomický ředitel:</h2>
+                            <p>
+                                Ivana Gergelová
                                 <br/>
                                 tel.: +420 577 434 574
                             </p>
@@ -199,11 +134,82 @@
                 </div>
             </div>
         </div>
-        <div class="footerBottom">
-            <div class="wrapper">
-                <strong>2015 GERGEL, s.r.o.</strong>
+    </article>
+</section>
+<footer>
+    <div class="footerTop">
+        <div class="wrapper row">
+            <div class="col-sm-6">
+                <h2>Napište nám</h2>
+                <form action="?" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" name="contactform[jmeno]" class="" placeholder="Jméno" required="">
+                            <input type="email" name="contactform[email]" class="" placeholder="Email" required="">
+                            <input type="tel" name="contactform[telefon]" class="" placeholder="Telefon">
+                        </div>
+                        <div class="col-sm-6 footerTextArea">
+                            <textarea name="contactform[zprava]" class="" placeholder="Text" required=""></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" class="show_name" readonly="">
+                        </div>
+                        <div class="col-sm-6 footerButtons">
+                            <div class="col-xs-6">
+                                <button type="button" id="choseFile" class="makeMeButtonGrey">přidat soubor</button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button type="submit" name="send" class="makeMeButtonGrey">odeslat</button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="file" name="file" class="makeMeHidden">
+                    <input type="hidden" name="h_module" value="contact">
+                    <input type="hidden" name="h_action" value="send">
+                    <input type="hidden" name="h_secure" value="69c76325b58865be22ce6dc9f67b2eb1">
+                </form>
+                <script type="text/javascript">
+                    $('#choseFile').click(function () {
+                        $('input[type="file"]').click();
+                    });
+                    $('input[type="file"]').change(function(){
+                        if (this.files && this.files[0]) {
+                            $(".show_name").val(this.files[0].name);
+                        }
+                    });
+                </script>
+            </div>
+            <div class="col-sm-6">
+                <h2>Kde nás najdete</h2>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5200.989751690255!2d17.54886257281522!3d49.323848922540485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47130cb9ea549b5b%3A0xbe6c96e1ee594ee0!2sGergel+S.r.o.!5e0!3m2!1scs!2scz!4v1425558384913" height="186" frameborder="0" style="border:0"></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>
+                            <strong>2015 GERGEL, s.r.o.</strong>
+                            <br/>
+                            Nábřeží č.p. 599
+                            <br/>
+                            760 01  Zlín
+                            <br/>
+                            <br/>
+                            email: info@gergel.cz
+                            <br/>
+                            tel.: +420 577 434 574
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </div>
+    <div class="footerBottom">
+        <div class="wrapper">
+            <strong>2015 GERGEL, s.r.o.</strong>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

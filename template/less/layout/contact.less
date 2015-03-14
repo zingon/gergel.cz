@@ -1,20 +1,19 @@
 #contact {
   .row {
-    > div {
-      margin-bottom: 30px;
-      > div {
-        iframe {
-          width: 100%;
-        }
+    > .row-same-height {
+      > .col-sm-height {
+        background-color: @referenceBg;
+        padding: 20px;
+        border: 15px solid @bgColor;
         > div {
-          background-color: @referenceBg;
-          padding: 20px;
-          height: 100%;
           h2 {
             text-transform: none;
             font-size: @h3Size;
             margin-top: 0;
             margin-bottom: 10px;
+          }
+          iframe {
+            width: 100%;
           }
         }
       }

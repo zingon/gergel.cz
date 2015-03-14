@@ -1849,22 +1849,19 @@ footer > .footerBottom .wrapper strong {
 #referenceItems .referenceItem > .row > .col-xs-8 {
   padding-bottom: 45px;
 }
-#contact .row > div {
-  margin-bottom: 30px;
-}
-#contact .row > div > div iframe {
-  width: 100%;
-}
-#contact .row > div > div > div {
+#contact .row > .row-same-height > .col-sm-height {
   background-color: #f3f3f3;
   padding: 20px;
-  height: 100%;
+  border: 15px solid white;
 }
-#contact .row > div > div > div h2 {
+#contact .row > .row-same-height > .col-sm-height > div h2 {
   text-transform: none;
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 10px;
+}
+#contact .row > .row-same-height > .col-sm-height > div iframe {
+  width: 100%;
 }
 #contact .row .cleaner {
   margin: 0;
