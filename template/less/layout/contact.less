@@ -1,0 +1,25 @@
+#contact {
+  .row {
+    > .row-same-height {
+      > .col-sm-height {
+        background-color: @referenceBg;
+        padding: 20px;
+        border: 15px solid @bgColor;
+        > div {
+          h2 {
+            text-transform: none;
+            font-size: @h3Size;
+            margin-top: 0;
+            margin-bottom: 10px;
+          }
+          iframe {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .cleaner {
+      margin: 0;
+    }
+  }
+}

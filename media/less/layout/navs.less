@@ -7,9 +7,19 @@ nav#mainNav {
   background-color: @navBgColor;
   padding-right: 75px;
   box-sizing: border-box;
+  @media (max-width: @navHideAt) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  @media (max-width: @screen-lg-min){
+    padding-left: 0;
+  }
   .home {
     margin: ((@navHeight - 25) / 2) (25px - @navItemPadding / 2) 0px 25px;
     float: left;
+    @media (max-width: @navHideAt) {
+      float: none;
+    }
   }
   font-family: @familyRoboto;
   font-size: @navTextSize;
@@ -20,6 +30,7 @@ nav#mainNav {
   }
   .nav {
     width: 100%;
+    position: relative;
     > a {
       display: block;
       box-sizing: border-box;
@@ -30,6 +41,7 @@ nav#mainNav {
       padding: ((@navHeight  - @navTextSize)/ 2) (@navItemPadding / 2) (0) (@navItemPadding / 2);
       position: relative;
       overflow: hidden;
+      z-index: 10;
       &::after {
         content: "";
         display: block;
@@ -40,11 +52,67 @@ nav#mainNav {
         left: 0;
         bottom: 0;
         transform: translate(0, 10px);
+        z-index: -10;
         transition: 200ms;
+        @media (max-width: @navHideAt) {
+          top: 0;
+          left: -100%;
+          height: 100%;
+        }
       }
       &:hover::after, &:active {
         transform: translate(0, 0);
-        transition: 100ms;
+        transition: 300ms;
+        @media (max-width: @navHideAt) {
+          transform: translate(100%, 0);
+        }
+      }
+    }
+    @media (max-width: @navHideAt) {
+      display: none;
+      padding-top: (@navHeight - 25) / 2;
+      > a {
+        float: none;
+        text-align: left;
+      }
+    }
+  }
+  .navToggle {
+    position: absolute;
+    left: (@navItemPadding * 3);
+    top: (@navHeight - 25) / 2;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+    @media (min-width: @navHideAt) {
+      display: none;
+    }
+    span, span:before, span:after {
+      cursor: pointer;
+      border-radius: 1px;
+      height: 5px;
+      width: 35px;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all 500ms ease-in-out;
+    }
+    span:before {
+      top: -10px;
+    }
+    span:after {
+      bottom: -10px;
+    }
+    &.active span {
+      background-color: transparent;
+      &:before, &:after {
+        top: 0;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
       }
     }
   }

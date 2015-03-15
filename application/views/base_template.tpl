@@ -47,17 +47,18 @@ Promenne do base_template:
         <title>{$page_name} - {$page_title}</title>
         <link rel="stylesheet" href="{$media_path}css/main.css"/>
         <script src="{$media_path}js/jquery.js" type="application/javascript"></script>
+        <script src="{$media_path}js/jqueryUI.js" type="application/javascript"></script>
         <script src="{$media_path}js/main.js" type="application/javascript"></script>
     </head>
     <body>
         <header class="wrapper row">
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <a href="{$url_base}"><img src="{$media_path}img/layout/logo.png" alt="{$web_owner.default_title}"/></a>
             </div>
-            <div class="col-xs-4">
+            <div class="col-sm-4">
                 <h2>{translate str=$web_owner.default_description}</h2>
             </div>
-            <div class="col-xs-4 pullRight">
+            <div class="col-lg-3 pullRight">
                 {widget controller="site" action="languagebox"}
             </div>
             
