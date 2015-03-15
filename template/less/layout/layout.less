@@ -5,20 +5,32 @@
 @import "productInfo";
 @import "vyrobniKapacity";
 @import "reference";
-body {
+@import "contact";
+
+html {
   min-width: 100%;
-  background: url("../img/layout/bgAl.png") no-repeat 0 150px;
-  background-size: 100% 502px;
-  @media (max-width: @screen-sm-min) {
-    background-position: 0 300px;
-  }
-  @media (max-width: (@screen-sm-min / 2)) {
-    background-position: 0 400px;
-  }
-  article {
-    >.wrapper {
-      box-sizing: border-box;
-      padding: 35px;
+  min-height: 100%;
+  body {
+    min-width: 100%;
+    height: 100%;
+    background: url("../img/layout/bgAl.png") no-repeat 0 150px;
+    background-size: 100% 502px;
+    @media (max-width: @pageWidth) {
+      background-position: 0 170px;
+    }
+    @media (max-width: @screen-sm-min) {
+      background-position: 0 320px;
+    }
+    @media (max-width: (@screen-sm-min / 2)) {
+      background-position: 0 400px;
+    }
+    section {
+      article {
+        >.wrapper {
+          box-sizing: border-box;
+          padding: 35px;
+        }
+      }
     }
   }
 }

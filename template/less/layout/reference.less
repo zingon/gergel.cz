@@ -1,9 +1,26 @@
 #referenceItems {
-  > .row {
-    > div {
+  .referenceItem {
+    padding: 5px;
+    > .row {
       background-color: @referenceBg;
-      img {
-        margin: 20px;
+      padding: 10px;
+      > .col-xs-4, .col-xs-8 {
+        min-height: 140px;
+        img {
+          margin: 10px auto;
+        }
+        h3 {
+          color: @h_colorRed;
+          font-size: 16px;
+        }
+        span {
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+        }
+      }
+      > .col-xs-8 {
+        padding-bottom: 45px;
       }
     }
   }
