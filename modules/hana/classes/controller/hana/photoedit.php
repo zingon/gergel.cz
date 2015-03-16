@@ -67,6 +67,9 @@ abstract class Controller_Hana_Photoedit extends Controller_Hana_Edit {
 
     protected function _form_action_photoedit_main_gallery_add($data)
     {
+        if($data['language_id']==0) {
+            $data['language_id']=1;
+        }
         $errors="";
         // primitivni predvalidovani dat
         //if(!$data["nazev"]) $errors["nazev"]="musí být zadán název";

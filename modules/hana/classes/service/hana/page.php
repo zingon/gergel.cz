@@ -12,6 +12,7 @@ class Service_Hana_Page extends Service_Hana_Module_Base
     public static $photos_resources_dir="media/photos/";
     public static $navigation_module="page";
     protected static $chainable=true;
+    protected static $thumbs = array('small'=>'t1','big'=>'ad');
     
     /**
      * Nacte stranku dle route_id
@@ -50,6 +51,26 @@ class Service_Hana_Page extends Service_Hana_Module_Base
             $result_data["photo"]="";
         }
         
+        $result_data['photos'] = array();
+        $photos_orm = $page_orm->page_photos
+                            ->where('zobrazit','=',1)
+                            ->where('language_id','=',$page_orm->language_id)
+                            ->order_by('poradi',self::$order_direction)
+                            ->find_all();
+
+        foreach ($photos_orm as $photo) {
+            $result_data['photos'][$photo->id] = $photo->as_array();
+            foreach (self::$thumbs as $key => $thumb) {
+
+                $dirname=self::$photos_resources_dir.self::$navigation_module."/item/gallery/images-". $page_orm->id.'/'.$photo->photo_src.'-'.$thumb.'.jpg';
+
+                if($photo->photo_src && file_exists(str_replace('\\', '/', DOCROOT).$dirname)){
+                    
+                    $result_data['photos'][$photo->id][$key] = $dirname;
+                }
+            }
+        }
+
         return $result_data;
     }
     

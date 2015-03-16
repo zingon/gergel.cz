@@ -4,11 +4,10 @@
 			<h1>{$item.nazev}</h1>
 			<div class="row">
 				<p>{$item.popis}</p>
-				<img src="{$item.photo.small}">
+				<img src="{$item.photo.big}">
 				{foreach from=$item.photos item=photo key=key name=item_photos}
 					<img src="{$photo.small}" alt="{$photo.nazev}">
-				{/foreach}
-				
+				{/foreach}	
 			</div>
 		</div>
 	</article>

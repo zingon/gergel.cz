@@ -11,4 +11,28 @@
       padding-right: 50px;
     }
   }
+  .productGallery {
+    margin-bottom: 50px;
+    > img {
+      @media (max-width: @screen-lg-min) {
+        margin: 20px auto;
+      }
+    }
+    .bx-wrapper {
+      max-width: 398px !important;
+      position: relative;
+      left: 2px;
+      .bx-prev {
+        left: -25px;
+      }
+      .bx-next {
+        right: -32px;
+      }
+      @media (max-width: @screen-lg-min) {
+        .bx-next {
+          right: -22px;
+        }
+      }
+    }
+  }
 }

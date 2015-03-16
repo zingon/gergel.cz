@@ -46,8 +46,12 @@ Promenne do base_template:
         <meta charset="UTF-8">
         <title>{$page_name} - {$page_title}</title>
         <link rel="stylesheet" href="{$media_path}css/main.css"/>
+        <link rel="stylesheet" href="{$media_path}css/lightbox.css">
         <script src="{$media_path}js/jquery.js" type="application/javascript"></script>
         <script src="{$media_path}js/jqueryUI.js" type="application/javascript"></script>
+        <script src="{$media_path}js/bxSlider/plugins/jquery.easing.1.3.js" type="application/javascript"></script>
+        <script src="{$media_path}js/bxSlider/jquery.bxslider.min.js" type="application/javascript"></script>
+        <script src="{$media_path}js/lightbox.js" type="application/javascript"></script>
         <script src="{$media_path}js/main.js" type="application/javascript"></script>
     </head>
     <body>
