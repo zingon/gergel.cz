@@ -17,7 +17,7 @@ class Service_Catalog extends Service_Hana_Module_Base
 	protected static $photos_resources_dir="media/photos/";
 	protected static $files_resources_dir="media/files/";
 
-	protected static $thumbs = array("big"=>"ad","small"=>"at","t1"=>"t1");
+	protected static $thumbs = array("big"=>"ad","small"=>"t2","t1"=>"t1");
 	
 	/**
 	 * Nacte clanek dle route_id

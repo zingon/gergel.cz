@@ -16,6 +16,7 @@ class Service_Article extends Service_Hana_Module_Base
 
     public static $photos_resources_dir="media/photos/";
     public static $photos_resources_subdir="";
+    protected static $thumbs = array('small'=>'t1','big'=>'ad');
     
     /**
      * Nacte clanek dle route_id
@@ -40,7 +41,25 @@ class Service_Article extends Service_Hana_Module_Base
             $result_data["photo"]=false;
         }
 
+        $result_data['photos'] = array();
+        $photos_orm = $article->article_photos
+                            ->where('zobrazit','=',1)
+                            ->where('language_id','=',$article->language_id)
+                            ->order_by('poradi','asc')
+                            ->find_all();
 
+        foreach ($photos_orm as $photo) {
+            $result_data['photos'][$photo->id] = $photo->as_array();
+            foreach (self::$thumbs as $key => $thumb) {
+
+                $dirname=self::$photos_resources_dir.self::$navigation_module."/item/gallery/images-". $article->id.'/'.$photo->photo_src.'-'.$thumb.'.jpg';
+
+                if($photo->photo_src && file_exists(str_replace('\\', '/', DOCROOT).$dirname)){
+                    
+                    $result_data['photos'][$photo->id][$key] = $dirname;
+                }
+            }
+        }
         
         
         return $result_data;
