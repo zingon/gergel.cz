@@ -3262,9 +3262,9 @@ nav#mainNav .navToggle span,
 nav#mainNav .navToggle span:before,
 nav#mainNav .navToggle span:after {
   cursor: pointer;
-  border-radius: 1px;
-  height: 5px;
-  width: 35px;
+  border-radius: 2px;
+  height: 4px;
+  width: 30px;
   background: white;
   position: absolute;
   display: block;
