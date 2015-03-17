@@ -42,8 +42,8 @@ class Service_Reference extends Service_Hana_Module_Base
 			}
 			
 			
-
-			/*$photos_orm = $node->reference_photos
+			$result_data[$node->id]['photos'] = array();
+			$photos_orm = $node->reference_photos
 							->where('zobrazit','=',1)
 							->where('language_id','=',$language_id)
 							->order_by(self::$order_by,self::$order_direction)
@@ -59,7 +59,7 @@ class Service_Reference extends Service_Hana_Module_Base
 						$result_data[$node->id]['photos'][$photo->id][$key] = $dirname;
 					}
 				}
-			}*/
+			}
 		}
 		return $result_data;
 

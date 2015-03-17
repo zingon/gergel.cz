@@ -1,14 +1,15 @@
  <section>
  	<article>
+
  		<div class="wrapper">
  			<h1>{$item.nazev}</h1>
+ 			<p>{$item.popis}</p>
  			<div class="row">
- 				<p>{$item.popis}</p>
- 				<ul>
+ 			<div class="col-xs-12">
  					{foreach from=$files item=file key=key name=Files}
- 						<li><a href="{$file.file}" download>{$file.nazev} ({$file.ext})</a></li>
+ 						<p><a href="{$file.file}" download class="makeMeButton">{$file.nazev} ({$file.ext})</a></p>
  					{/foreach}
- 				</ul>
+ 			</div>
  			</div>
  		</div>
  	</article>

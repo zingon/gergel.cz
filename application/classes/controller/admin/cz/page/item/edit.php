@@ -64,9 +64,9 @@ class Controller_Admin_Cz_Page_Item_Edit extends Controller_Hana_Edit
         
         $this->auto_edit_table->row("description")->type("edit")->label("Popis")->set();
         $this->auto_edit_table->row("keywords")->type("edit")->label("Klíčová slova")->set();
-        //$this->auto_edit_table->row("indexpage")->type("checkbox")->label("Hlavní stránka")->set();
+        $this->auto_edit_table->row("indexpage")->type("checkbox")->label("Hlavní stránka")->set();
         //$this->auto_edit_table->row("protected")->type("checkbox")->label("Chráněná (pro odborníky)")->set();
-        //$this->auto_edit_table->row("show_child_pages_index")->type("checkbox")->label("Hlavní stránka")->set();
+        $this->auto_edit_table->row("show_child_pages_index")->type("checkbox")->label("Zobrazit podstránky")->set();
         //$this->auto_edit_table->row("show_contactform")->type("checkbox")->label("Vložit kontaktní formulář")->set();
         $this->auto_edit_table->row("zobrazit")->type("checkbox")->data_src(array("related_table_1"=>"route"))->default_value(1)->label("Zobrazit")->set();
         //$this->auto_edit_table->row("no_link")->type("checkbox")->default_value(0)->label("Vypnout odkaz")->set();

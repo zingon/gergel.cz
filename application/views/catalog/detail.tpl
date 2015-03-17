@@ -21,7 +21,7 @@
                             <ul class="bxslider small">
                         {/if}
                         <li>
-                            <a href="{$photo.big}">
+                            <a href="{$photo.t1}">
                                 <img src="{$photo.small}" alt="{$photo.nazev}"/>
                             </a>
                         </li>
