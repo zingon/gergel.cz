@@ -3508,22 +3508,6 @@ footer > .footerBottom .wrapper strong {
     margin: 20px auto;
   }
 }
-#productInfo .productGallery .bx-wrapper {
-  max-width: 398px !important;
-  position: relative;
-  left: 2px;
-}
-#productInfo .productGallery .bx-wrapper .bx-prev {
-  left: -25px;
-}
-#productInfo .productGallery .bx-wrapper .bx-next {
-  right: -32px;
-}
-@media (max-width: 1200px) {
-  #productInfo .productGallery .bx-wrapper .bx-next {
-    right: -22px;
-  }
-}
 #vyrobniKapacityItems > .wrapper.row > div span {
   font-size: 16px;
   color: white;
