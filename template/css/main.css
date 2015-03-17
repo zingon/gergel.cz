@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&subset=latin,latin-ext);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -3226,13 +3226,13 @@ nav#mainNav .nav > a::after {
   }
 }
 nav#mainNav .nav > a:hover::after,
-nav#mainNav .nav > a:active {
+nav#mainNav .nav > a:active::after {
   transform: translate(0, 0);
   transition: 300ms;
 }
 @media (max-width: 1000px) {
   nav#mainNav .nav > a:hover::after,
-  nav#mainNav .nav > a:active {
+  nav#mainNav .nav > a:active::after {
     transform: translate(100%, 0);
   }
 }
@@ -3384,6 +3384,9 @@ footer > .footerBottom .wrapper strong {
   font-weight: normal;
   font-size: 14px;
 }
+.gallery > img {
+  width: 100%;
+}
 #intro {
   text-align: center;
   padding-top: 80px;
@@ -3476,8 +3479,12 @@ footer > .footerBottom .wrapper strong {
 #news .wrapper .newsItem img {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
+#productInfo {
+  padding: 35px;
+}
 #productInfo section {
   padding-bottom: 20px;
+  margin-bottom: 35px;
   border-bottom: 2px solid #e9e9e9;
 }
 #productInfo section:last-child {
@@ -3511,40 +3518,43 @@ footer > .footerBottom .wrapper strong {
     right: -22px;
   }
 }
-#vyrobniKapacityItems .col-sm-15 {
+#vyrobniKapacityItems > .row-same-height div {
   padding-left: 5px;
   padding-right: 5px;
   box-sizing: border-box;
 }
-#vyrobniKapacityItems .col-sm-15:first-child {
+#vyrobniKapacityItems > .row-same-height div:first-child {
   padding-left: 0;
 }
-#vyrobniKapacityItems .col-sm-15:nth-child(5) {
+#vyrobniKapacityItems > .row-same-height div:nth-child(5) {
   padding-right: 0;
 }
-#vyrobniKapacityItems .col-sm-15 a {
+#vyrobniKapacityItems > .row-same-height div a {
   text-align: center;
   transition: 300ms;
 }
-#vyrobniKapacityItems .col-sm-15 a div {
+#vyrobniKapacityItems > .row-same-height div a div {
   background-color: #f3f3f3;
   box-sizing: border-box;
   padding-top: 25px;
 }
-#vyrobniKapacityItems .col-sm-15 a div:hover img {
+#vyrobniKapacityItems > .row-same-height div a div:hover img {
   transform: scale(1.1);
   transition: All 200ms ease;
 }
-#vyrobniKapacityItems .col-sm-15 a div:hover span::before {
+#vyrobniKapacityItems > .row-same-height div a div:hover span::before {
   transform: translate(0, -100%);
 }
-#vyrobniKapacityItems .col-sm-15 a img {
+#vyrobniKapacityItems > .row-same-height div a div img {
   border-radius: 50%;
   margin: 0 auto;
   transition: All 300ms ease;
   margin-bottom: 25px;
 }
-#vyrobniKapacityItems .col-sm-15 a span {
+#vyrobniKapacityItems > .row-same-height div a div p {
+  padding: 0 20px;
+}
+#vyrobniKapacityItems > .row-same-height div a div span {
   font-size: 16px;
   color: white;
   padding: 10px 50px 10px 50px;
@@ -3585,13 +3595,13 @@ footer > .footerBottom .wrapper strong {
   z-index: 10;
   overflow: hidden;
 }
-#vyrobniKapacityItems .col-sm-15 a span:hover {
+#vyrobniKapacityItems > .row-same-height div a div span:hover {
   color: white;
   transform: translate(0, -2px) scale(1.005);
   transition: 100ms;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-#vyrobniKapacityItems .col-sm-15 a span::before {
+#vyrobniKapacityItems > .row-same-height div a div span::before {
   content: "";
   z-index: -10;
   width: 100%;
@@ -3649,23 +3659,23 @@ footer > .footerBottom .wrapper strong {
   padding-right: 0;
   transition: 300ms;
 }
-#vyrobniKapacityItems .col-sm-15 a span::before:hover {
+#vyrobniKapacityItems > .row-same-height div a div span::before:hover {
   color: white;
   transform: translate(0, -2px) scale(1.005);
   transition: 100ms;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-#vyrobniKapacityItems .col-sm-15 a span::before:hover {
+#vyrobniKapacityItems > .row-same-height div a div span::before:hover {
   color: white;
 }
-#vyrobniKapacityItems .col-sm-15 a span:hover {
+#vyrobniKapacityItems > .row-same-height div a div span:hover {
   transform: none;
   box-shadow: none;
   padding-left: 0;
   padding-right: 0;
   transition: 100ms;
 }
-#vyrobniKapacityItems .col-sm-15 a span:hover::before {
+#vyrobniKapacityItems > .row-same-height div a div span:hover::before {
   transform: translate(0, -100%);
 }
 #vyrobniKapacityItems .wrapper {
