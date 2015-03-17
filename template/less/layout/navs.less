@@ -31,6 +31,10 @@ nav#mainNav {
   .nav {
     width: 100%;
     position: relative;
+    margin-left: 60px;
+    @media (max-width: @navHideAt) {
+      margin-left: 0;
+    }
     > a {
       display: block;
       box-sizing: border-box;
