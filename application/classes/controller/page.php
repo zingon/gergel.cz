@@ -32,14 +32,20 @@ class Controller_Page extends Controller
         $route_id=$this->application_context->get_actual_route();
         $page=Service_Page::get_page_by_route_id($route_id);
         
-        if($page["show_child_pages_index"])
+        if($page["indexpage"])
         {
             return $this->action_index();
+        } 
+        else if($page["show_child_pages_index"])
+        {
+            $template=new View("page/list");
+            $page["childrens"] = Service_Page::get_pages_with_parent($this->application_context->get_actual_language_id(),$page['id'],3);
         }
         else
         {
             $template=new View("page/detail");
         }
+        
         $template->item=$page;
         $sublinks=((Hana_Navigation::instance()->get_navigation($this->application_context->get_actual_language_id(),self::$current_page_category_id)));
         $template->sublinks=isset($sublinks[$this->application_context->get_actual_seo()]["children"])?$sublinks[$this->application_context->get_actual_seo()]["children"]:array();

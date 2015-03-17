@@ -36,9 +36,5 @@ class Service_Page extends Service_Hana_Page
 
         return $result_data;
     }
-
-    protected static function get_photos($language_id,$module_id,$thumbs = array(),$module="page",$dir="/media/photos") {
-        
-    }
 }
 ?>
