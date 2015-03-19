@@ -111,6 +111,17 @@ Promenne do base_template:
             <div class="footerBottom">
                 <div class="wrapper">
                     <strong>{$web_owner.copyright}</strong>
+                    <div class="row">
+                        <div class="col-sm-9">{translate str="realizace"}:
+                            <a href="http://www.dgstudio.cz/" title="tvorba www stránek">{translate str="tvorba www stránek"}</a> |
+                            <a href="http://www.virtualni-prohlidky.eu/" title="virtuální prohlídky">{translate str="virtuální prohlídky"}</a> |
+                            <a href="http://validator.w3.org/check/referer" title="HTML validátor">HTML5</a> |
+                            <a href="http://jigsaw.w3.org/css-validator/" title="CSS validator">CSS 3</a>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="http://www.dgstudio.cz/" title="DG Studio" id="dgLogo"><div></div></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>

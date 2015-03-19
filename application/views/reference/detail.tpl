@@ -8,10 +8,10 @@
 					<div class="gallery">
 						{foreach from=$item.photos item=photo key=key name=item_photos}
 							{if $smarty.foreach.item_photos.index == 0}
-								<img src="{$photo.big}" class="img-responsive" alt="{$photo.nazev}"/>
-								<ul class="bxslider">
+								<img src="{$photo.big}" class="img-responsive galleryCanvas" alt="{$photo.nazev}"/>
+								<ul class="bxslider bxNormal">
 							{/if}
-							<li>
+							<li class="slide">
 								<a href="{$photo.big}">
 								<img src="{$photo.small}" alt="{$photo.nazev}">
 								</a>

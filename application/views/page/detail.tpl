@@ -22,7 +22,7 @@
                 {$item.popis}
                 {if not empty($item.photos)}
                     <h3>{translate str="Fotogalerie"}</h3>
-                    <ul class="bxslider">
+                    <ul class="bxslider bxNormal">
                         {foreach from=$item.photos item=photo key=key name=photos}
                             <li>
                             {if not empty($photo.big) and not empty($photo.small)}

@@ -17,10 +17,10 @@
 
                     {foreach from=$product.photos item=photo key=key name=photo}
                         {if $smarty.foreach.photo.index == 0}
-                            <img src="{$photo.t1}" class="img-responsive" alt="{$photo.nazev}"/>
-                            <ul class="bxslider small">
+                            <img src="{$photo.t1}" class="img-responsive galleryCanvas" alt="{$photo.nazev}"/>
+                            <ul class="bxslider bxSmall">
                         {/if}
-                        <li>
+                        <li class="slide">
                             <a href="{$photo.t1}">
                                 <img src="{$photo.small}" alt="{$photo.nazev}"/>
                             </a>
