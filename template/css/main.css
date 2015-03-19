@@ -3390,6 +3390,32 @@ footer > .footerBottom .wrapper strong {
   font-weight: normal;
   font-size: 14px;
 }
+footer > .footerBottom .wrapper div a {
+  color: white;
+  position: relative;
+}
+footer > .footerBottom .wrapper div a:hover {
+  text-decoration: underline;
+}
+footer > .footerBottom .wrapper div #dgLogo div {
+  width: 150px;
+  height: 73px;
+  display: block;
+  position: absolute;
+  top: -35px;
+  background: url("../img/layout/dgLogoCol.png") no-repeat;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  footer > .footerBottom .wrapper div #dgLogo div {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+  }
+}
+footer > .footerBottom .wrapper div #dgLogo div:hover {
+  background: url("../img/layout/dgLogoBW.png") no-repeat;
+}
 .gallery > img {
   width: 100%;
 }
