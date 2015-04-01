@@ -1,0 +1,39 @@
+#pinned {
+  z-index: 10000000;
+}
+.pin-wrapper {
+  .active {
+    header {
+      padding: 0px 20px 8px 20px !important;
+      &::before {
+        display: block;
+        opacity: 1;
+        transition: 100ms;
+      }
+      >div:first-child {
+        position: relative;
+        top: 4px;
+      }
+      > .col-sm-5 img {
+        width: 45%;
+        transition: 300ms;
+      }
+      h2 {
+        display: none;
+      }
+      .pullRight {
+        position: relative;
+        top: 7px;
+        img {
+          margin-bottom: 0;
+        }
+      }
+    }
+    #vyrobniKapacityItems {
+      .wrapper {
+        padding-top: 6px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}

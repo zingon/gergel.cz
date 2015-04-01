@@ -1,6 +1,22 @@
 header {
   padding: 45px 20px 0 20px;
   box-sizing: border-box;
+  transition: 300ms;
+  &::before {
+    background-color: @bgColor;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    .BoxShadowHelper(1);
+    padding-bottom: 5px;
+    box-sizing: content-box;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    display: none;
+    transition: 100ms;
+  }
   >div:first-child {
     position: relative;
     top: -20px;

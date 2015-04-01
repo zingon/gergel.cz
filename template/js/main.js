@@ -5,6 +5,11 @@
 $(document).ready(function main() {
     $(".row, .nav, .col-sm-height>div").append("<div class='cleaner'></div>");
 
+    $("#pinned").pin({
+        minWidth: 1000,
+        activeClass: "active"
+    });
+
     $(".navToggle").click(function() {
         $(this).toggleClass("active");
         $("#mainNav .nav").toggle("blind", 1000);
