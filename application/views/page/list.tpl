@@ -10,7 +10,7 @@
 						 <a href="{$child.nazev_seo}">
                             <div>
                                 <img src="{$child.icon}" class="img-responsive" alt="{$child.nazev}"/>
-                                <p>{$child.uvodni_popis|truncate:129:"..."|strip_tags:false}</p>
+                                <p>{$child.uvodni_popis|truncate:123:"..."|strip_tags:false}</p>
                                 <span>{$child.nazev}</span>
                             </div>
                         </a>

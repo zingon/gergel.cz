@@ -26,7 +26,9 @@ class Controller_Navigation extends Controller
 		
 		$links = Service_Catalog_Category::get_categories_by_parent_id(0, $this->application_context->get_actual_language_id(),1,5);
 		$nav->links = $links;
-        //$nav->sel_link = array_shift(Hana_Navigation::instance()->get_navigation_breadcrumbs());
+        $links = Hana_Navigation::instance()->get_navigation_breadcrumbs();
+
+        $nav->sel = array_shift($links);
 		
 		$this->request->response = $nav->render();
 	}

@@ -53,8 +53,10 @@ Promenne do base_template:
         <script src="{$media_path}js/bxSlider/jquery.bxslider.min.js" type="application/javascript"></script>
         <script src="{$media_path}js/lightbox.js" type="application/javascript"></script>
         <script src="{$media_path}js/main.js" type="application/javascript"></script>
+        <script src="{$media_path}js/pin.js" type="application/javascript"></script>
     </head>
     <body>
+    <div id="pinned">
         <header class="wrapper row">
             <div class="col-sm-5">
                 <a href="{$url_base}"><img src="{$media_path}img/layout/logo.png" alt="{$web_owner.default_title}"/></a>
@@ -71,6 +73,7 @@ Promenne do base_template:
         {if $controller eq "catalog" and $controller_action eq "category"}
             {widget controller="navigation" action="category"}    
         {/if}
+    </div>
         {if $url_actual!=$url_homepage}
             {widget controller="navigation" action="breadcrumbs"}
         {/if}

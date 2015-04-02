@@ -3,7 +3,7 @@
 	<a href="#" class="navToggle"><span></span></a>
 	<div class="nav">
 		{foreach from=$links item=link key=key name=menu}
-				<a href="{$url_base}{$link.nazev_seo}">{$link.nazev}</a>
+				<a href="{$url_base}{$link.nazev_seo}" {if $link.nazev_seo eq $sel.nazev_seo}class='active'{/if}>{$link.nazev}</a>
 		{/foreach}
 	</div>
 </nav>
