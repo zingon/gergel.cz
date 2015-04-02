@@ -3398,12 +3398,12 @@ footer > .footerBottom .wrapper div a:hover {
   text-decoration: underline;
 }
 footer > .footerBottom .wrapper div #dgLogo div {
-  width: 150px;
-  height: 73px;
+  width: 100px;
+  height: 49px;
   display: block;
   position: absolute;
-  top: -35px;
-  background: url("../img/layout/dgLogoCol.png") no-repeat;
+  top: -20px;
+  background: url("../img/layout/dgLogoBW.png") no-repeat;
   background-size: cover;
 }
 @media (max-width: 768px) {
@@ -3414,7 +3414,7 @@ footer > .footerBottom .wrapper div #dgLogo div {
   }
 }
 footer > .footerBottom .wrapper div #dgLogo div:hover {
-  background: url("../img/layout/dgLogoBW.png") no-repeat;
+  background: url("../img/layout/dgLogoCol.png") no-repeat;
 }
 .gallery > img {
   width: 100%;

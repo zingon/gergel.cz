@@ -44,7 +44,7 @@ class Controller_Site extends Controller {
             Request::instance()->status = 404;
             $this->request->response = View::factory('errors/404');
             return;
-        } elseif ($this->application_context->get_actual_seo() == 'zbozi') {
+        }/* elseif ($this->application_context->get_actual_seo() == 'zbozi') {
 	    $view = View::factory('feed/zbozi');
 	    $products = Service_Product_Category::get_products_all();
 	    $view->products = $products;
@@ -63,7 +63,7 @@ class Controller_Site extends Controller {
 	    // print_r($products);
 	    $this->request->response = $view;
 	    return;
-	} else  {
+	}*/ else  {
             $seo = $this->application_context->get_actual_seo();
             $route_id = $this->application_context->get_route_id();
 
