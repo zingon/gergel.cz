@@ -22,6 +22,10 @@
   opacity: 0;
 }
 
+.fuckingSafariTransform(@transform) {
+  transform: @transform;
+  -webkit-transform: @transform; /* Safari */
+}
 /**
  * A mixin which helps you to add depth to elements according to the Google Material Design spec:
  * http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality
