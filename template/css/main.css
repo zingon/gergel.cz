@@ -3715,7 +3715,7 @@ footer > .footerBottom .wrapper div #dgLogo div:hover {
 #vyrobniKapacityItems > div div a div {
   background-color: #f3f3f3;
   box-sizing: border-box;
-  padding-top: 25px;
+  padding: 0;
 }
 #vyrobniKapacityItems > div div a div:hover img {
   transform: scale(1.1);
@@ -3729,9 +3729,9 @@ footer > .footerBottom .wrapper div #dgLogo div:hover {
   /* Safari */
 }
 #vyrobniKapacityItems > div div a div img {
-  margin: 0 auto;
+  padding: 10px;
+  margin: 0;
   transition: All 300ms ease;
-  margin-bottom: 25px;
 }
 #vyrobniKapacityItems > div div a div p {
   padding: 0 20px;
