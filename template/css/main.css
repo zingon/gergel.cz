@@ -3702,12 +3702,6 @@ footer > .footerBottom .wrapper div #dgLogo div:hover {
   padding-right: 5px;
   box-sizing: border-box;
 }
-#vyrobniKapacityItems > div div:first-child {
-  padding-left: 0;
-}
-#vyrobniKapacityItems > div div:nth-child(5) {
-  padding-right: 0;
-}
 #vyrobniKapacityItems > div div a {
   text-align: center;
   transition: 300ms;
@@ -3732,6 +3726,11 @@ footer > .footerBottom .wrapper div #dgLogo div:hover {
   padding: 10px;
   margin: 0;
   transition: All 300ms ease;
+}
+@media (max-width: 768px) {
+  #vyrobniKapacityItems > div div a div img {
+    margin: 0 auto;
+  }
 }
 #vyrobniKapacityItems > div div a div p {
   padding: 0 20px;
