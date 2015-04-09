@@ -9,10 +9,11 @@
 
 class Controller_Admin_Cz_Reference_Item_List extends Controller_Hana_List
 {
-    
+
     public function before() {
         $this->orm=new Model_Reference();
         parent::before();
+
     }
 
 
@@ -24,6 +25,7 @@ class Controller_Admin_Cz_Reference_Item_List extends Controller_Hana_List
         $this->auto_list_table->column("fotogalerie")->type("relatedDetail")->label("Galerie")->data_src(array("db_query"=>db::select(array(db::expr("count(id)"),"count"))->from(strtolower($this->orm->class_name)."_photos"),"db_query_where_colid"=>"reference_id"))->item_settings(array("hrefid"=>$this->base_path_to_gallery,"alt"=>"editovat fotogalerii","alt_empty"=>"vložit nové fotky do fotogalerie","image"=>"images.png","image_empty"=>"images_empty.png"))->width(40)->exportable(false)->set();
         if(Kohana::config("languages")->get("enabled"))
         $this->auto_list_table->column("available_languages")->type("languages")->item_settings(array("hrefid"=>$this->base_path_to_edit))->width(60)->set();
+        $this->auto_list_table->column("poradi")->type("changeOrderShifts")->label("")->sequenceable()->width(32)->exportable(false)->printable(false)->set();
         $this->auto_list_table->column("zobrazit")->type("switch")->data_src(array("related_table_1"=>"route"))->item_settings(array("action"=>"change_visibility","states"=>array(0=>array("image"=>"lightbulb_off.png","label"=>"neaktivní"),1=>array("image"=>"lightbulb.png","label"=>"aktivní"))))->sequenceable()->filterable(array("col_name"=>"routes.zobrazit"))->label("")->width(32)->set();
         $this->auto_list_table->column("delete")->type("checkbox")->value(0)->label("")->item_settings(array("readonly"=>"route"))->width(30)->exportable(false)->printable(false)->set();
     }
@@ -32,8 +34,11 @@ class Controller_Admin_Cz_Reference_Item_List extends Controller_Hana_List
     {
         $this->orm->join("routes")->on("reference_data.route_id","=","routes.id");
     }
-    
 
-    
+    protected function _form_action_change_order($data)
+    {
+        $this->module_service->reorder_two_items($data["item_id"], $data["direction"]);
+        $this->data_saved=true;
+    }
 
 }

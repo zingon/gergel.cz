@@ -6,7 +6,7 @@
 			<section id="referenceItems">
 					<div class="row">
 						{foreach from=$items item=reference key=key name=references}
-						{if $smarty.foreach.references.index%2 eq 0 and not $smarty.foreach.references.first}<div class="row">{/if}
+						{if $smarty.foreach.references.index%2 eq 0 and not $smarty.foreach.references.first}</div><div class="row">{/if}
 							<div class="col-sm-6">
 								<a href="{$url_base}{$reference.nazev_seo}">
 									<div class="referenceItem">
@@ -22,12 +22,10 @@
 			                        </div>
 						 		</a>
 							</div>
-						{if $smarty.foreach.references.iteration%2 eq 0 and not $smarty.foreach.references.last}<div class="row">{/if}
+							{if $smarty.foreach.references.iteration%2 eq 0 and not $smarty.foreach.references.last}</div><div class="row">{/if}
 						{/foreach}
 					</div>
 			</section>
 		</div>
 	</article>
 </section>
-
- 

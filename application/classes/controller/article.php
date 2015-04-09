@@ -38,7 +38,7 @@ class Controller_Article extends Controller
     {
         $template=new View("article/widget");
         $language_id=$this->application_context->get_actual_language_id();
-        $template->items=Service_Article::get_article_banner_list($language_id,2);
+        $template->items=Service_Article::get_article_banner_list($language_id,1);
         //die(print_r(Service_Article::get_article_banner_list($language_id,0,3)));
         $this->request->response=$template->render();
     }
