@@ -9,7 +9,7 @@
   font-family: @familyRoboto;
   font-size: 14px;
   box-shadow: none;
-  transform: none;
+  .fuckingSafariTransform(none);
   transition: 300ms;
   z-index: 10;
   overflow: hidden;
@@ -22,20 +22,20 @@
     bottom: -100%;
     left: 0px;
     .makeMeButtonBlue();
-    transform: none;
+    .fuckingSafariTransform(none);
     box-shadow: none;
     padding-left: 0;
     padding-right: 0;
     transition: 300ms;
   }
   &:hover {
-    transform: none;
+    .fuckingSafariTransform(none);
     box-shadow: none;
     padding-left: 0;
     padding-right: 0;
     transition: 100ms;
     &::before {
-      transform: translate(0, -100%);
+      .fuckingSafariTransform(translate(0, -100%));
     }
   }
 }
@@ -55,32 +55,29 @@
       padding-left: 5px;
       padding-right: 5px;
       box-sizing: border-box;
-      &:first-child {
-        padding-left: 0;
-      }
-      &:nth-child(5) {
-        padding-right: 0;
-      }
       a {
         text-align: center;
         transition: 300ms;
         div {
           background-color: #f3f3f3;
           box-sizing: border-box;
-          padding-top: 25px;
+          padding: 0;
           &:hover {
             img {
-              transform: scale(1.1);
+              .fuckingSafariTransform(scale(1.1));
               transition: All 200ms ease;
             }
             span::before {
-              transform: translate(0, -100%);
+              .fuckingSafariTransform(translate(0, -100%));
             }
           }
           img {
-            .makeMeCenter();
+            padding: 10px;
+            margin: 0;
             transition: All 300ms ease;
-            margin-bottom: 25px;
+            @media (max-width: @screen-sm-min)  {
+              margin: 0 auto;
+            }
           }
           p {
             padding: 0 20px;
@@ -108,6 +105,7 @@ nav#vyrobniKapacityItems {
   a.active {
     > span::before {
       transform: translate(0, -100%) !important;
+      -webkit-transform: translate(0, -100%) !important;
     }
   }
 }
