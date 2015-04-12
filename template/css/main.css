@@ -4017,3 +4017,7 @@ html body section article > .wrapper {
   box-sizing: border-box;
   padding: 35px;
 }
+html body .pagination {
+  text-align: center;
+  font-size: 16px;
+}
