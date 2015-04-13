@@ -1,4 +1,4 @@
-<h1>{translate str="Novinky"}</h1>
+<h1><a href="{$url_base}{translate str='novinky'}">{translate str="Novinky"}</a></h1>
 {foreach from=$items item=article key=key name=articles}
 	<div class="row newsItem">
 		<div class="col-xs-4">

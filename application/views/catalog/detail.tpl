@@ -1,10 +1,9 @@
 <section>
-    <article id="productInfo">
-	 <section class="wrapper">
+    <article id="productInfo" class="wrapper">
     <h1>{$item.nazev}</h1>
 
     {foreach from=$products item=product key=key name=category_products}
-    <section class="wrapper">
+    <section>
         <div class="row">
             <div class="col-lg-7">
                 <h2>{$product.nazev}</h2>
@@ -32,6 +31,5 @@
             </div>
     </section>
     {/foreach}
-	</section>
     </article>
 </section>
